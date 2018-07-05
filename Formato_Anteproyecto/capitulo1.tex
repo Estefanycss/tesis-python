@@ -1,0 +1,56 @@
+\chapter{Preliminares}
+
+\section{Planteamiento y formulaci\'on del problema}
+
+La minería de datos provee una manera para que las computadoras puedan tomar decisiones en base a data, estás decisiones pueden ser predecir el clima de mañana, bloquear correo spam o detectar el lenguaje de una página web (Layton, 2015), o en el caso de esta investigación crear un modelo para clasificar empleando el algoritmo de Bayes Naive.\\
+
+Los algoritmos, estadística, ingeniería, optimización y ciencia computacional son parte de la minería de datos, todas estas herramientas ayudan a describir un aspecto del mundo real a través de un conjunto de datos que está conformado por las muestras que son representaciones de objetos y las características que son la descripción de dichos objetos. (Layton, 2015)\\
+
+Según VanderPlas (2017) para realizar clasificación con minería de datos se pueden implementar los modelos Bayes Naive que son un grupo de algoritmos simples y rápidos mayormente acertados para conjuntos de datos grandes, estos clasificadores están construidos sobre la base de los métodos de clasificación Bayesiana que se apoyan en el teorema de Bayes que es una ecuación que describe la relación de las probabilidades condicionales de las cantidades estadísticas. En la clasificación Bayesiana el interés es encontrar la probabilidad de una clase L de acuerdo a las características observadas, que se puede escribir como $P\left(L|caracteristicas\right)$ y el teorema de Bayes indica como expresar esto en términos de cantidades que pueden ser computarizadas mas fácilmente:
+
+\[P\left(L|caracteristicas\right)=\frac{P\left(caracteristicas|L\right)P\left(L\right)}{P\left(caracteristicas\right)}\]
+  
+Si se intenta decidir entre dos clases ($L_{1}$ y $L_{2}$) la manera de tomar la decisión es computar el radio de la probabilidad posterior para cada clase:
+
+\[\frac{P\left(L_{1}|caracteristicas\right)}{P\left(L_{1}|caracteristicas\right)}=\frac{P\left(caracteristicas|L_{1}\right)P\left(L_{1}\right)}{P\left(caracteristicas|L_{2}\right)P\left(L_{2}\right)}\]\\
+
+El algoritmo basado en estas ecuaciones debe seguir los siguientes pasos según Layton (2015):
+
+\begin{itemize}
+	\item Teniendo el conjunto de datos de entrenamiento se debe calcular los valores de la probabilidad de una característica para cada clase.
+	\item Se computa la probabilidad de que un dato de muestra pertenezca a una clase.
+	\item Se computa la probabilidad de que un dato pertenezca a una clase.
+	\item Se ingresan valores de prueba al modelo y se prueba la clasificación.
+\end{itemize}
+
+La propuesta de esta investigación es implementar un clasificador de Bayes Naive para entrenar un modelo que teniendo como características los pesos frescos de cada calibre de papa (el calibre es una categorización de las papas según su tamaño) pueda indicar con un alto nivel de aciertos la densidad de siembra a la que fue plantada, el desarrollo de este clasificador será en Python que según la fundación de Python (2018) es un lenguaje de programación creado en 1990 por Guido Van Rossum que se caracteriza por ser sencillo de aprender, tener esctructuras de data de alto nivel que son eficientes y un simple pero efectivo acercamiento con la programación orientada a objetos.\\
+
+Los datos que se van a emplear para la construcción, validación y prueba del clasificador serán los datos observados en el Centro agropecuario Marengo de la Universidad Nacional de Colombia, en el departamento de Cundinamarca y datos que serán generados empleando regresión espacial, para así observar las variaciones que pueden provocar en el modelo los datos reales y los generados artificialmente. El método de regresión espacial es un modelo estadístico para data observada en unidades geográficas como países o regiones, donde juegan un papel importante los vecinos como indica Arbia (2014), este autor expresa que para tratar información espacial es necesario tener dos sets de información, el primero que posee los valores observados de las variables y el segundo que posee la ubicación particular donde esos valores fueron observados y las relaciones de proximidad entre todas las observaciones espaciales.\\
+
+Para realizar la comparación de los resultados obtenidos para cada set de datos se usa la curva ROC, que como explica Gönen (2017) la curva ROC (Receiver Operating Characteristic Curve) es una herramienta estadística para evaluar la precisión de predicciones independientemente de la fuente de las mismas.
+
+\section{Objetivos}
+
+\subsection{Objetivo General}
+
+Clasificar tubérculos de papa criolla para diferentes densidades de siembra según el peso fresco por calibre empleando Bayes Naive.
+
+\subsection{Objetivos Espec\'ificos}
+ 
+\begin{itemize}
+\item  Estimar el peso por calibre para diferentes densidades de siembra empleando métodos econométricos espaciales.
+\item	 Estimar el peso por calibre para diferentes densidades de siembra empleando Bayes Naive para datos observados y datos estimados.
+\item  Comparar la exactitud de las clasificaciones mediantes curvas característica operativa del receptor (ROC).
+\end{itemize}
+
+\section{Justificaci\'on e Importancia}
+
+Para la industria colombiana la papa criolla constituye un rubro muy importante, es un producto versatil que como lo indica Piñeros (2009) permite mediante varios procesos la obtención de papa criolla precocida y congelada, francesa precocida prefrita congelada y preformados, entre otros, para la realización de cada uno de estos productos es necesario emplear papas cuyas caracteristicas se adecuen a lo que busca la industria, una característica resaltante al momento de clasificar papas es su peso. Cuando una industria cosecha papas controla que el resultado sean papas que se adecuen al tipo de producto que luego van a generar, para ellos usan diferentes métodos que les permiten controlar las características incurriendo en los menores gastos posibles.\\
+
+Uno de los métodos para modificar las características es realizar variaciones a la densidad de siembra, que es una variable controlada y de fácil manejo que le permite a las industrias obtener cosechas que cumplan en un mayor porcentaje sus requerimientos (Arias, 1996). Sin embargo, las investigaciones previamente realizadas sobre la densidad de siembra emplean análisis estadísticos no espaciales para el estudio de esta variable, lo que conlleva a un error porque esta variable posee una connotación espacial y además se sabe que cada punto es afectado por sus vecinos, pero al emplear regresión espacial que es un método más acertado para el problema en cuestión también se presentan algunas limitantes en la generalización de los resultados, por eso se busca la alternativa que representa la minería de datos con el algoritmo de clasificación de Bayes Naïve, que proporciona resultados de manera general y permite obtener una clasificación en base a las características que son usadas para crear el modelo de clasificación, buscando así crear un modelo para clasificar la densidad de siembra tomando como características los pesos frescos de cada calibre y obteniendo resultados que tenga un mayor porcentaje de aciertos que los obtenidos por otros métodos de clasificación.
+	
+\section{Alcance y Limitaciones}
+
+Los datos para realizar el entrenamiento, validación y prueba del modelo de clasificación fueron recolectados en una cosecha de papa criolla (\textit{Solanum phureja}) a los 120 días de siembra, en total se tienen 2839 sets de datos que fueron sembrados a tres densidades de siembra diferentes (30, 40 y 50cm entre plantas, todos con separación de 100cm entre surcos), los tubérculos de cada planta luego de ser cosechados fueron clasificados en cuatro grupos según su calibre, el primer grupo es para tamaños menores de 2cm, el segundo para tamaños de 2 a 4cm, el tercero para tamaños de 4 a 6 cm y el último para tamaños mayores de 6cm, luego por cada planta se obtuvo el peso fresco para cada uno de esos calibres. En total se tienen 1135 conjuntos de datos para la densidad de 30 cm, 926 conjuntos para la densidad de 40 cm y 778 para la densidad de 50 cm.\\
+
+En esta investigación solo se realizará la clasificación de la densidad de siembra a partir de los pesos frescos de cada calibre, otras variables que representan características de las papas como la textura, color, diámetro ponderado, no serán tomadas en consideración. El modelo de clasificación será construido y probado con la data observada y data generada a partir del método de regresión espacial para contrastar la diferencia entre ambas. 
