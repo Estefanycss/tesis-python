@@ -68,6 +68,45 @@ Usando esta suposición y la regla de Bayes, se puede mostrar que la probabilida
 
 Donde, $P\left(X_{1},X_{2},...,X_{n}\right)$ es el término de normalización obtenido al sumar el numerador en todos los valores de k. También se denomina evidencia bayesiana o función de partición Z. El clasificador selecciona una etiqueta de clase como la clase objetivo que maximiza la probabilidad de clase posterior $P\left(C_{k}|\left\{X_{1},X_{2},...,X_{n}\right\}\right)$.
 
+\subsection{Bayes Naive Bernoulli}
+
+Como define Bonaccorso (2017) Si $X$ es una variable aleatoria que se ajusta a la distribución de Bernoulli se puede asumir que solo tiene dos valores posibles que en este caso serán 0 y 1, y su probabilidad es:
+
+ \[P\left(X\right)=\begin{cases} 
+      p & \mbox{si } X = 1   \\
+      q & \mbox{si } X = 0
+   \end{cases}\]
+   
+ \[Donde\;q = 1 - p\;y\;0 < p < 1\]
+ 
+Cuando se aplica el clasificador Bayes naive con esta representación, se asume que la aparición de un valor es independiente de la aparición del otro, y se obtiene la frecuencia de cada valor dentro de los datos. (Koller y Friedman, 2009)
+
+\subsection{Bayes Naive Multinomial}
+
+Según Bonaccorso (2017) una distribución multinomial es útil para modelar vectores de características donde cada valor representa, por ejemplo, el número de apariciones de un término o su frecuencia relativa. Si los vectores de características tienen $n$ elementos y cada uno de ellos puede asumir $k$ valores diferentes con probabilidad $p_{k}$, entonces:
+
+\[
+P\left(X_{1}=x_{1} \cap_{}^{} X_{2}=x_{2} \cap_{}^{} ... \cap_{}^{} X_{k}=x_{k} \right) = \frac{n!}{\prod_{i} x_{i}!} \prod_{i} p_{i}^{x_{i}}
+\]
+%P\left(X_{1}=x_{1} \cap_{}^{} X_{2}=x_{2} \cap_{}^{} ... \cap_{}^{} X_{k}=x_{k} \right) = \frac{n!}{\prod_{}_{i} x_{i}!} \prod_{i} p_{i}^x_{i}
+Las probabilidades condicionales $P\left(X_{i} | y\right)$ se calculan con un recuento de frecuencia (que corresponde a aplicar un enfoque de máxima verosimilitud), pero en este caso, es importante considerar el parámetro alfa (denominado factor de suavizado de Laplace). Su valor predeterminado es 1.0 e impide que el modelo establezca probabilidades nulas cuando la frecuencia es cero. Es posible asignar todos los valores no negativos; sin embargo, los valores más grandes asignarán mayores probabilidades a las características faltantes y esta opción podría alterar la estabilidad del modelo.
+
+\subsection{Bayes Naive Gaussiano}
+
+De acuerdo con Bonaccorso (2017) es útil cuando se trabaja con valores continuos cuyas probabilidades se pueden modelar usando una distribución gaussiana:
+
+\[
+P\left(x\right) = \frac{1}{\sqrt{2\pi\sigma^{2}}}e^{-\frac{\left(x-\mu\right)^{2}}{2\sigma^{2}}}
+\]
+
+Las probabilidades condicionales $P\left(x_{i} | y\right)$ también están distribuidas en Gauss; por lo tanto, es necesario estimar la media y la varianza de cada uno de ellos utilizando el enfoque de máxima verosimilitud. Esto es bastante fácil; De hecho, considerando la propiedad de un gaussiano, se obtiene: 
+
+\[
+L\left(\mu;\sigma^{2};x_{i} | y\right)=\log\prod_{k}P\left(x_{i}^{\left(k\right)}|y\right)=\sum_{k}\log P\left(x_{i}^{\left(k\right)}|y\right)
+\]
+
+En la formula anterior, el índice $k$ se refiere a las muestras en el conjunto de datos y $P\left(x_{i}^{\left(k\right)}|y\right)$ es un gaussiano en sí mismo. Al minimizar el inverso de esta expresión se obtiene la media y la varianza para cada gaussiano asociado con $P\left(x_{i}^{\left(k\right)}|y\right)$ y, por lo tanto, el modelo está capacitado.
+
 \subsection{Curva Característica Operativa del Receptor}
 
 Una curva característica operativa del receptor es una herramienta estadística para evaluar la precisión de predicciones, a menudo se abrevia como curva ROC o gráfico ROC, el último se utiliza con más frecuencia en la literatura de minería de datos.(Gönen,2007)\\

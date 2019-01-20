@@ -15,11 +15,16 @@
 \BOOKMARK [2][-]{subsection.2.2.5}{Teorema de Bayes}{section.2.2}% 15
 \BOOKMARK [2][-]{subsection.2.2.6}{Inferencia Bayesiana}{section.2.2}% 16
 \BOOKMARK [2][-]{subsection.2.2.7}{Clasificador Bayes Naive}{section.2.2}% 17
-\BOOKMARK [2][-]{subsection.2.2.8}{Curva Caracter\355stica Operativa del Receptor}{section.2.2}% 18
-\BOOKMARK [2][-]{subsection.2.2.9}{Glosario}{section.2.2}% 19
-\BOOKMARK [0][-]{chapter.3}{Fundamentos Metodol\363gicos}{}% 20
-\BOOKMARK [1][-]{section.3.1}{Enfoque de la investigaci\363n}{chapter.3}% 21
-\BOOKMARK [1][-]{section.3.2}{Tipo o nivel de investigaci\363n}{chapter.3}% 22
-\BOOKMARK [1][-]{section.3.3}{Dise\361o de la investigaci\363n}{chapter.3}% 23
-\BOOKMARK [1][-]{section.3.4}{Metodolog\355a}{chapter.3}% 24
-\BOOKMARK [1][-]{section.3.5}{Aspectos administrativos}{chapter.3}% 25
+\BOOKMARK [2][-]{subsection.2.2.8}{Bayes Naive Bernoulli}{section.2.2}% 18
+\BOOKMARK [2][-]{subsection.2.2.9}{Bayes Naive Multinomial}{section.2.2}% 19
+\BOOKMARK [2][-]{subsection.2.2.10}{Bayes Naive Gaussiano}{section.2.2}% 20
+\BOOKMARK [2][-]{subsection.2.2.11}{Curva Caracter\355stica Operativa del Receptor}{section.2.2}% 21
+\BOOKMARK [2][-]{subsection.2.2.12}{Glosario}{section.2.2}% 22
+\BOOKMARK [0][-]{chapter.3}{Fundamentos Metodol\363gicos}{}% 23
+\BOOKMARK [1][-]{section.3.1}{Enfoque de la investigaci\363n}{chapter.3}% 24
+\BOOKMARK [1][-]{section.3.2}{Tipo o nivel de investigaci\363n}{chapter.3}% 25
+\BOOKMARK [1][-]{section.3.3}{Dise\361o de la investigaci\363n}{chapter.3}% 26
+\BOOKMARK [1][-]{section.3.4}{Metodolog\355a}{chapter.3}% 27
+\BOOKMARK [1][-]{section.3.5}{Aspectos administrativos}{chapter.3}% 28
+\BOOKMARK [0][-]{chapter.4}{Desarrollo}{}% 29
+\BOOKMARK [1][-]{section.4.1}{Bayes Naive}{chapter.4}% 30
