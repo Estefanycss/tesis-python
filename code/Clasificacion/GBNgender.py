@@ -12,12 +12,18 @@ def pre_prob(y):
         pre_probab[i] = y_dict[i]/y.shape[0]
     return pre_probab
 
+#Funcion que calcula la media y varianza
 
 def mean_var(X, y):
+    print('data inicial: ',X)
+    print('vector de coincidencias de clases: ', y)
     n_features = X.shape[1]
+    # Se crean los array m y v que son de 2x3 dimensiones para este caso.
+    # Van a contener la media y varianza de cada clase
     m = np.ones((2, n_features))
     v = np.ones((2, n_features))
     n_0 = np.bincount(y.astype(int))[np.nonzero(np.bincount(y.astype(int)))[0]][0]
+    print('n_0',n_0)
     x0 = np.ones((n_0, n_features))
     x1 = np.ones((X.shape[0] - n_0, n_features))
 
@@ -36,8 +42,7 @@ def mean_var(X, y):
         m[0][j] = np.mean(x0.T[j])
         v[0][j] = np.var(x0.T[j]) * (n_0 / (n_0 - 1))
         m[1][j] = np.mean(x1.T[j])
-        v[1][j] = np.var(x1.T[j]) * ((X.shape[0] - n_0) / ((X.shape[0]
-                                                            - n_0) - 1))
+        v[1][j] = np.var(x1.T[j]) * ((X.shape[0] - n_0) / ((X.shape[0] - n_0) - 1))
     return m, v  # mean and variance
 
 def prob_feature_class(m, v, x):
@@ -70,12 +75,16 @@ data = pd.read_csv('./GenderData.csv', delimiter=',')
 # converting from pandas to numpy ...
 X_train = np.array(data.iloc[:,[1,2,3]])
 y_train = np.array(data['Person'])
+print(y_train)
+print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+
 for i in range(0,y_train.shape[0]):
     if y_train[i] == "female":
         y_train[i] = 0
     else:
         y_train[i] = 1
-x = np.array([6, 130, 8]) # test instance used in Wikipedia
+
+x = np.array([6, 130, 8]) # set de prueba
 
 # executing the Gaussian Naive Bayes for the test instance...
 m, v, pre_probab, pfc, pcf, prediction = GNB(X_train, y_train, x)
@@ -92,5 +101,3 @@ print(pcf) # Conditional Probability of the classes given test-data
 print('Prediccion---------------------------------------------------------')
 print(prediction) # Output given below............(final prediction)
 
-
-#Como voy a hacer para clasificar si los ejemplos que he visto son para pertenece si o no a una clase
