@@ -54,6 +54,7 @@ def prob_feature_class(m, v, x):
             product = product * (1/sqrt(2*3.14*v[i][j])) * exp(-0.5
                                  * pow((x[j] - m[i][j]),2)/v[i][j])
         pfc[i] = product
+    print('pfc\n',pfc)
     return pfc
 
 def GNB(X, y, x):
@@ -67,6 +68,7 @@ def GNB(X, y, x):
     for i in range(0, 2):
         pcf[i] = (pfc[i] * pre_probab[i])/total_prob
     prediction = int(pcf.argmax())
+    print('prediction\n\n',pcf)
     return m, v, pre_probab, pfc, pcf, prediction
 
 data = pd.read_csv('./GenderData.csv', delimiter=',')
