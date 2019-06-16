@@ -5,11 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1d1fa181-c472-47b8-b4d1-44206bd8a2b2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GBNgender.py" beforeDir="false" afterPath="$PROJECT_DIR$/GBNgender.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clasificador.py" beforeDir="false" afterPath="$PROJECT_DIR$/clasificador.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/pip-selfcheck.json" beforeDir="false" afterPath="$PROJECT_DIR$/venv/pip-selfcheck.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../descriptiva.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/descriptiva.py" beforeDir="false" afterPath="$PROJECT_DIR$/descriptiva.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -90,8 +86,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/clasificador.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="48">
-              <caret line="127" column="82" selection-start-line="127" selection-start-column="82" selection-end-line="127" selection-end-column="82" />
+            <state relative-caret-position="228">
+              <caret line="139" lean-forward="true" selection-start-line="139" selection-end-line="139" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
                 <marker date="1560716649689" expanded="true" signature="384:6315" ph="..." />
@@ -105,8 +101,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/descriptiva.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="119" lean-forward="true" selection-start-line="119" selection-end-line="119" />
+            <state relative-caret-position="255">
+              <caret line="17" column="19" lean-forward="true" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -332,11 +328,11 @@
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Terminal" order="11" />
-      <window_info anchor="bottom" id="Python Console" order="12" visible="true" weight="0.5746988" />
+      <window_info anchor="bottom" id="Python Console" order="12" weight="0.5746988" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="SciView" order="3" weight="0.32904148" />
+      <window_info active="true" anchor="right" id="SciView" order="3" visible="true" weight="0.32904148" />
       <window_info anchor="right" x="0" y="0" width="270" height="509" id="Documentation" order="4" side_tool="true" weight="0.32904148" />
       <window_info anchor="right" id="Database" order="5" />
     </layout>
@@ -418,8 +414,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/clasificador.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="127" column="82" selection-start-line="127" selection-start-column="82" selection-end-line="127" selection-end-column="82" />
+        <state relative-caret-position="228">
+          <caret line="139" lean-forward="true" selection-start-line="139" selection-end-line="139" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
             <marker date="1560716649689" expanded="true" signature="384:6315" ph="..." />
@@ -431,8 +427,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/descriptiva.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="119" lean-forward="true" selection-start-line="119" selection-end-line="119" />
+        <state relative-caret-position="255">
+          <caret line="17" column="19" lean-forward="true" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
