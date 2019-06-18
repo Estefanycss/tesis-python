@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1d1fa181-c472-47b8-b4d1-44206bd8a2b2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/descriptiva.py" beforeDir="false" afterPath="$PROJECT_DIR$/descriptiva.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clasificador.py" beforeDir="false" afterPath="$PROJECT_DIR$/clasificador.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/pip-selfcheck.json" beforeDir="false" afterPath="$PROJECT_DIR$/venv/pip-selfcheck.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -59,23 +60,23 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="6796" />
+          <entry key="py" value="7335" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="6796" />
+          <entry key="Python" value="7335" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="csv" value="2" />
+          <entry key="csv" value="3" />
           <entry key="py" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="PLAIN_TEXT" value="2" />
+          <entry key="PLAIN_TEXT" value="3" />
           <entry key="Python" value="7" />
         </counts>
       </usages-collector>
@@ -83,29 +84,36 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/clasificador.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="139" lean-forward="true" selection-start-line="139" selection-end-line="139" />
+            <state relative-caret-position="220">
+              <caret line="160" column="37" selection-start-line="160" selection-start-column="37" selection-end-line="160" selection-end-column="37" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
-                <marker date="1560716649689" expanded="true" signature="384:6315" ph="..." />
-                <marker date="1560716649689" expanded="true" signature="3445:6250" ph="..." />
-                <marker date="1560716649689" expanded="true" signature="4667:6250" ph="..." />
+                <marker date="1560866550372" expanded="true" signature="597:9692" ph="..." />
+                <marker date="1560866550372" expanded="true" signature="3657:9627" ph="..." />
+                <marker date="1560866550372" expanded="true" signature="4585:5915" ph="..." />
+                <marker date="1560866550372" expanded="true" signature="6375:9627" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/datag.csv">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-20462">
+              <caret line="24" column="32" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/descriptiva.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="19" lean-forward="true" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
-              <folding>
-                <element signature="e#0#11#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="29">
+              <caret line="9" column="24" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -126,10 +134,10 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/GBNgender.py" />
-        <option value="$PROJECT_DIR$/clasificador.py" />
         <option value="$PROJECT_DIR$/estadisticaDescriptiva.py" />
         <option value="$PROJECT_DIR$/../descriptiva.py" />
         <option value="$PROJECT_DIR$/descriptiva.py" />
+        <option value="$PROJECT_DIR$/clasificador.py" />
       </list>
     </option>
   </component>
@@ -139,7 +147,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="width" value="1440" />
     <option name="height" value="900" />
   </component>
@@ -183,7 +191,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.descriptiva">
+  <component name="RunManager" selected="Python.clasificador">
     <configuration name="GBNgender" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="test" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -290,8 +298,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.estadisticaDescriptiva" />
         <item itemvalue="Python.clasificador" />
+        <item itemvalue="Python.estadisticaDescriptiva" />
         <item itemvalue="Python.GBNgender" />
       </list>
     </recent_temporary>
@@ -332,7 +340,7 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info active="true" anchor="right" id="SciView" order="3" visible="true" weight="0.32904148" />
+      <window_info anchor="right" id="SciView" order="3" weight="0.32904148" />
       <window_info anchor="right" x="0" y="0" width="270" height="509" id="Documentation" order="4" side_tool="true" weight="0.32904148" />
       <window_info anchor="right" id="Database" order="5" />
     </layout>
@@ -388,13 +396,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/datag.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="32" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../descriptiva.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -412,25 +413,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/clasificador.py">
+    <entry file="file://$PROJECT_DIR$/descriptiva.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="139" lean-forward="true" selection-start-line="139" selection-end-line="139" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-            <marker date="1560716649689" expanded="true" signature="384:6315" ph="..." />
-            <marker date="1560716649689" expanded="true" signature="3445:6250" ph="..." />
-            <marker date="1560716649689" expanded="true" signature="4667:6250" ph="..." />
-          </folding>
+        <state relative-caret-position="29">
+          <caret line="9" column="24" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/descriptiva.py">
+    <entry file="file://$PROJECT_DIR$/datag.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="19" lean-forward="true" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
+        <state relative-caret-position="-20462">
+          <caret line="24" column="32" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/clasificador.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="160" column="37" selection-start-line="160" selection-start-column="37" selection-end-line="160" selection-end-column="37" />
           <folding>
-            <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#0#18#0" expanded="true" />
+            <marker date="1560866550372" expanded="true" signature="597:9692" ph="..." />
+            <marker date="1560866550372" expanded="true" signature="3657:9627" ph="..." />
+            <marker date="1560866550372" expanded="true" signature="4585:5915" ph="..." />
+            <marker date="1560866550372" expanded="true" signature="6375:9627" ph="..." />
           </folding>
         </state>
       </provider>
