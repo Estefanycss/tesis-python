@@ -13,7 +13,7 @@ import matplotlib.pyplot as plt
 plotly.tools.set_credentials_file(username='Estefanycss', api_key='HNgIr2Ezlb21nsKgHvng')
 
 # Read data file
-df = pd.read_excel('./datagnel.xlsx', sheet_name='datag')
+df = pd.read_csv('./datag.csv', delimiter=',')
 format = ['densidad', 'PD1', 'PD2', 'PD3', 'PD4', 'x', 'y']
 values = df[format]
 formatW = ['PD1', 'PD2', 'PD3', 'PD4']
@@ -143,36 +143,3 @@ plt.xticks(range(len(data_corr_3.columns)), data_corr_3.columns)
 plt.yticks(range(len(data_corr_3.columns)), data_corr_3.columns)
 plt.colorbar()
 plt.show()
-
-# Positions graph
-
-trace0 = go.Scatter(
-    x=filtro_densidad_1["x"],
-    y=filtro_densidad_1["y"],
-    name="Densidad 1",
-    mode='markers',
-    marker=dict(
-        size=filtro_densidad_1["PD1"] / 20
-    )
-)
-trace1 = go.Scatter(
-    x=filtro_densidad_2["x"],
-    y=filtro_densidad_2["y"],
-    name="Densidad 2",
-    mode='markers',
-    marker=dict(
-        size=filtro_densidad_2["PD1"] / 20
-    )
-)
-trace2 = go.Scatter(
-    x=filtro_densidad_3["x"],
-    y=filtro_densidad_3["y"],
-    name="Densidad 3",
-    mode='markers',
-    marker=dict(
-        size=filtro_densidad_3["PD1"] / 20
-    )
-)
-
-data = [trace0, trace1, trace2]
-plotly.offline.plot(data, filename="Pesos del calibre 1 representados por coordenadas.html")
