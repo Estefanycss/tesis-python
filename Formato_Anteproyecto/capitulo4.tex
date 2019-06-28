@@ -16,7 +16,7 @@ A los 120 dds se cosecharon los tubérculos y se contaron según su diámetro en
 \noindent
 \textbf{Descripción de los datos.}\\
 
-Los datos se encuentran en un archivo de Excel (.xlsl) ordenados por columnas, la primera denominada planta que contiene el número que identifica cada planta, la segunda columna llamada densidad que posee valores de 1, 2 o 3, donde 1 implica una densidad de siembra de 30cm, 2 una densidad de 40cm y 3 una densidad de 50cm. Las siguientes cuatro columnas estan identificadas como PD1, PD2, PD3 y PD4, cada columna posee valores continuos que representan el peso fresco de cada calibre en esa planta, los calibres son 4 y representan la categorización de los tubérculos según su diámetro, para el calibre 1 se toman tubérculos con diámetro menor o igual a 2cm, para el calibre 2 con diámetro mayor a 2cm y menor o igual a 4cm, en el calibre 3 mayores a 4cm y menores o igual a 6cm y finalmente el calibre 4 con tubérculos de diámetro mayor a 6cm. Las últimas dos columnas son X y Y, que indican mediante un valor entero la posición de dicha planta en la siembra. La cantidad total de plantas es 2839, para las densidades de siembra 1, 2 y 3 hay 1135, 926 y 778 plantas respectivamente, cada una con valores de PD1, PD2, PD3, PD4, X y Y.
+Los datos se encuentran en un archivo CSV ordenados por columnas, la primera denominada planta que contiene el número que identifica cada planta, la segunda columna llamada densidad que posee valores de 1, 2 o 3, donde 1 implica una densidad de siembra de 30cm, 2 una densidad de 40cm y 3 una densidad de 50cm. Las siguientes cuatro columnas estan identificadas como PD1, PD2, PD3 y PD4, cada columna posee valores continuos que representan el peso fresco de cada calibre en esa planta, los calibres son 4 y representan la categorización de los tubérculos según su diámetro, para el calibre 1 se toman tubérculos con diámetro menor o igual a 2cm, para el calibre 2 con diámetro mayor a 2cm y menor o igual a 4cm, en el calibre 3 mayores a 4cm y menores o igual a 6cm y finalmente el calibre 4 con tubérculos de diámetro mayor a 6cm. Las últimas dos columnas son X y Y, que indican mediante un valor entero la posición de dicha planta en la siembra. La cantidad total de plantas es 2839, para las densidades de siembra 1, 2 y 3 hay 1135, 926 y 778 plantas respectivamente, cada una con valores de PD1, PD2, PD3, PD4, X y Y.
 
 A continuación se observan los datos descriptivos de cada variable
 
@@ -40,11 +40,27 @@ Distribución & N/A & normal & normal & normal & normal  \\ \hline
 \end{center}
 \end{table}
 
+La correlaciones de las variables PD1, PD2, PD3 y PD4 para cada densidad son las siguientes:
+\includegraphics[scale=0.5]{correlacionD1.jpg} 
+\includegraphics[scale=0.5]{correlacionD2.jpg} \\
+\includegraphics[scale=0.5]{correlacionD3.jpg} 
+
 \noindent
 \textbf{Exploración de datos.}\\
+Tomando en cuenta los estadísticos básicos de cada conjunto de datos se logra observar que los valores de varianza para las variables PD1, PD2, PD3 y PD4 son altos, esto podría afectar negativamente los cálculos del algoritmo de clasificación, a continuación se pueden observar los histogramas de las variables de entrada para cada densidad: 
+
+\begin{center}
+\includegraphics[scale=0.6]{PD1.png} \\
+\includegraphics[scale=0.6]{PD2.png} \\
+\includegraphics[scale=0.6]{PD3.png} \\
+\includegraphics[scale=0.6]{PD4.png} 
+\end{center}
+
+Los histogramas permiten observar que la distribución de los datos de entrada se asemeja a una curva normal, lo que ayuda a inferir que se debe emplear el método gaussiano de Bayes Naive para realizar su clasificación.
 
 \noindent
 \textbf{Verificación de la calidad de los datos.}\\
+
 
 \section{Preparación de datos}
 
@@ -67,6 +83,22 @@ Distribución & N/A & normal & normal & normal & normal  \\ \hline
 
 \noindent
 \textbf{Técnica de modelado.}\\
+
+El desarrollo del clasificador se realizó empleando Bayes Naive Gaussiano, luego de leer los datos se llama a la función bayes\_naive\_gaussiano que recibe como entrada los siguientes parámetros:
+\begin{itemize}
+	\item{set\_entrenamiento: es un array de numpy con las columnas número de planta, densidad, PD1, PD2, PD3, PD4, X y Y, su cantidad de filas depende de la cantidad de datos que sean destinados a formar parte del entrenamiento que es este caso en el 80\% de los datos iniciales, es decir, aproximadamente 2272 filas.}
+	\item{set\_test: es un array de numpy con las columnas PD1, PD2, PD3 y PD4, su cantidad de filas depende de la cantidad de datos que sean destinados a formar parte del set de pruebas que es este caso en el 20\% de los datos iniciales, es decir, aproximadamente 567 filas.}
+	\item{clases\_set\_test: es un array de numpy y cada fila representa la clase (densidad) para los datos en el set de test en el mismo número de fila, su cantidad de filas depende de la cantidad de datos que sean destinados a formar parte del set de pruebas que es este caso en el 20\% de los datos iniciales, es decir, aproximadamente 567 filas.}
+\end{itemize}
+
+Y ejecuta los siguientes pasos:
+\begin{enumerate}
+	\item {Realiza el cálculo de la media y varianza por cada característica y cada clase.}
+	\item {Calcula la probabilidad previa para cada clase.}
+	\item {Hace el cálculo de la probabilidad posterior de las características del set de pruebas para cada clase.}
+	\item {Obtiene las probabilidades condicionales según el Teorema de Bayes y las predicciones.}
+	\item {Realiza el análisis de los resultados empleando la curva característica operativa del receptor.}
+\end{enumerate}
 
 \noindent
 \textbf{Método de evaluación de los modelos.}\\

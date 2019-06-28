@@ -2,11 +2,9 @@ import collections
 import numpy as np
 import pandas as pd
 from math import sqrt, exp, pi
-from sklearn.metrics import roc_curve
-from sklearn.metrics import roc_auc_score, auc
-from sklearn.multiclass import OneVsRestClassifier
 from sklearn.metrics import confusion_matrix
 import matplotlib.pyplot as plt
+from sklearn.metrics import roc_curve, auc
 
 
 # CALCULO DE MEDIAS Y VARIANZAS
@@ -89,7 +87,7 @@ def prob_caracteristica_clase(m, v, set_test):
             pcc[i][j] = producto
 
     print('\n---------------------------------------------------------------------------------------------------\n'
-          'Probabilidad posterior de las caracteristica dada una clase\n'
+          'Probabilidad posterior de las caracteristicas dada una clase\n'
           '\tdensidad 1\t-\tdensidad 2\t-\tdensidad 3'
           '\n---------------------------------\n',
           pcc)
@@ -131,15 +129,7 @@ def estandarizacion(m, v, set_test, set_entrenamiento, set_test_completo):
 # Funcion para calcular la media y varianza de los datos, teniendo como parametros `x`
 # que es un array con los datos de las caracteristicas, `y` que contiene la clase a la
 # que pertenece cada set de caracteristicas y `set_test` que son los datos de prueba
-
-
-def bayes_naive_gussiano(caracteristicas, clases, set_entrenamiento, set_test, clases_set_test, set_test_completo):
-    # Llamando los metodos que calculan la media, varianza y probabilidades
-    m, v = media_varianza(caracteristicas, clases, set_entrenamiento)
-    # set_entrenamiento, set_test = estandarizacion(m,v,set_test,set_entrenamiento, set_test_completo)
-    prob_previa = pre_prob(clases)
-    pcc = prob_caracteristica_clase(m, v, set_test)
-    cant_clases = m.shape[0]
+def prob_condicional(set_test, cant_clases, pcc, prob_previa, clases_set_test):
     prob_cond = np.zeros((len(set_test), cant_clases))
     prob_total = np.zeros(len(set_test))
 
@@ -173,19 +163,20 @@ def bayes_naive_gussiano(caracteristicas, clases, set_entrenamiento, set_test, c
             desacierto += 1
 
     print('\n\naciertos:', acierto / (acierto + desacierto), '\tdesaciertos:', desacierto / (acierto + desacierto))
+    return prob_cond, prediccion
 
-    # Calculo de curva ROC
+
+# Curvas ROC
+def curvas_roc(clases_set_test, prediccion, cant_clases, prob_cond):
     # https://stackoverflow.com/questions/50941223/plotting-roc-curve-with-multiple-classes
     # http://benalexkeen.com/scoring-classifier-models-using-scikit-learn/
     matrix_confusion = confusion_matrix(clases_set_test, prediccion)
     print(matrix_confusion)
     # plt.style.use('ggplot')
     # Compute ROC curve and ROC AUC for each class
-    import matplotlib.pyplot as plt
-    from sklearn.metrics import roc_curve, auc
 
-    y_test = np.zeros((len(set_test), cant_clases))
-    for i in range(0, len(set_test)):
+    y_test = np.zeros((len(clases_set_test), cant_clases))
+    for i in range(0, len(clases_set_test)):
         if (clases_set_test[i] == 1):
             y_test[i][0] = 1
         if (clases_set_test[i] == 2):
@@ -204,16 +195,31 @@ def bayes_naive_gussiano(caracteristicas, clases, set_entrenamiento, set_test, c
     colors = (['blue', 'red', 'green'])
     for i, color in zip(range(cant_clases), colors):
         plt.plot(fpr[i], tpr[i], color=color,
-                 label='ROC curve of class {0} (area = {1:0.2f})'
-                       ''.format(i, roc_auc[i]))
+                 label='Curva ROC de la clase {0} (área = {1:0.2f})'
+                       ''.format(i + 1, roc_auc[i]))
     plt.plot([0, 1], [0, 1], 'k--')
     plt.xlim([-0.05, 1.0])
     plt.ylim([0.0, 1.05])
-    plt.xlabel('False Positive Rate')
-    plt.ylabel('True Positive Rate')
-    plt.title('Receiver operating characteristic for multi-class data')
+    plt.xlabel('Tasa de falsos positivos')
+    plt.ylabel('Tasa de verdaderos positivos')
+    plt.title('Curva característica operativa del receptor para datos multiclase')
     plt.legend(loc="lower right")
     plt.show()
+
+
+def bayes_naive_gaussiano(set_entrenamiento, set_test, clases_set_test, set_test_completo):
+    # caracteristicas contiene los valores de PD1, PD2, PD3 y PD4 para el entrenamiento
+    caracteristicas = set_entrenamiento[:, [2, 3, 4, 5]]
+    # clases contiene el valor de la densidad para cada planta para el entrenamiento
+    clases = set_entrenamiento[:, 1]
+    # Llamando los metodos que calculan la media, varianza y probabilidades
+    m, v = media_varianza(caracteristicas, clases, set_entrenamiento)
+    # set_entrenamiento, set_test = estandarizacion(m,v,set_test,set_entrenamiento, set_test_completo)
+    prob_previa = pre_prob(clases)
+    pcc = prob_caracteristica_clase(m, v, set_test)
+    cant_clases = m.shape[0]
+    prob_cond, prediccion = prob_condicional(set_test, cant_clases, pcc, prob_previa, clases_set_test)
+    curvas_roc(clases_set_test, prediccion, cant_clases, prob_cond)
 
 
 # LECTURA DEL ARCHIVO Y CREACION DE SETS DE ENTRENAMIENTO Y TEST
@@ -237,13 +243,11 @@ cantidad_muestras = int(len(data) * 0.2)
 set_test = data[0:cantidad_muestras, [2, 3, 4, 5]]
 set_test_completo = data[0:cantidad_muestras, :]
 clases_set_test = data[0:cantidad_muestras, 1]
-# set_entrenamiento = data[cantidad_muestras: len(data), :]
-set_entrenamiento = data
+set_entrenamiento = data[cantidad_muestras: len(data), :]
+print(set_entrenamiento)
+# set_entrenamiento = data
 
-# caracteristicas contiene los valores de PD1, PD2, PD3 y PD4 para el entrenamiento
-caracteristicas = set_entrenamiento[:, [2, 3, 4, 5]]
+bayes_naive_gaussiano(set_entrenamiento, set_test, clases_set_test, set_test_completo)
 
-# clases contiene el valor de la densidad para cada planta para el entrenamiento
-clases = set_entrenamiento[:, 1]
-
-bayes_naive_gussiano(caracteristicas, clases, set_entrenamiento, set_test, clases_set_test, set_test_completo)
+# Prueba de hipotesis para area bajo la curva ROC
+# Correr esto con GBN
