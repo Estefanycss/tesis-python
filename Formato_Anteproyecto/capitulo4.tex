@@ -1,7 +1,7 @@
-\chapter{Desarrollo} 
+\chapter{Desarrollo}
 
 En este capítulo se describe de manera detallada el desarrollo del clasificador de tubérculos siguiendo la metodología descrita en el capítulo 3.
-\noindent	
+\noindent
 \section{Comprensión de datos}
 
 \noindent
@@ -40,51 +40,83 @@ Distribución & N/A & normal & normal & normal & normal  \\ \hline
 \end{center}
 \end{table}
 
-La correlaciones de las variables PD1, PD2, PD3 y PD4 para cada densidad son las siguientes:
-\includegraphics[scale=0.5]{correlacionD1.jpg} 
-\includegraphics[scale=0.5]{correlacionD2.jpg} \\
-\includegraphics[scale=0.5]{correlacionD3.jpg} 
-
 \noindent
 \textbf{Exploración de datos.}\\
-Tomando en cuenta los estadísticos básicos de cada conjunto de datos se logra observar que los valores de varianza para las variables PD1, PD2, PD3 y PD4 son altos, esto podría afectar negativamente los cálculos del algoritmo de clasificación, a continuación se pueden observar los histogramas de las variables de entrada para cada densidad: 
+
+La correlaciones de las variables PD1, PD2, PD3 y PD4 para cada densidad son las siguientes:
+\includegraphics[scale=0.5]{correlacionD1.jpg}
+\includegraphics[scale=0.5]{correlacionD2.jpg} \\
+\includegraphics[scale=0.5]{correlacionD3.jpg}
+
+Tomando en cuenta los estadísticos básicos de cada conjunto de datos se logra observar
+que los valores de varianza para las variables PD1, PD2, PD3 y PD4 son altos, esto podría afectar
+negativamente los cálculos del algoritmo de clasificación, a continuación se pueden observar los
+histogramas de las variables de entrada para cada densidad:
 
 \begin{center}
 \includegraphics[scale=0.6]{PD1.png} \\
 \includegraphics[scale=0.6]{PD2.png} \\
 \includegraphics[scale=0.6]{PD3.png} \\
-\includegraphics[scale=0.6]{PD4.png} 
+\includegraphics[scale=0.6]{PD4.png}
 \end{center}
 
-Los histogramas permiten observar que la distribución de los datos de entrada se asemeja a una curva normal, lo que ayuda a inferir que se debe emplear el método gaussiano de Bayes Naive para realizar su clasificación.
+Los histogramas permiten observar que la distribución de los datos de entrada se asemeja a
+una curva normal, lo que ayuda a inferir que se debe emplear el método gaussiano de
+Bayes Naive para realizar su clasificación.\\\\
 
 \noindent
 \textbf{Verificación de la calidad de los datos.}\\
 
+Luego de revisar los valores de los datos se determinó que no era necesaria la estandarización
+de los mismos porque todos se encuentran en el mismo rango en cuanto a valor y en la misma unidad
+de peso que es gramos (gr); No hay valores faltantes, es decir, el set de datos está completo.
 
 \section{Preparación de datos}
 
 \noindent
 \textbf{Selección de datos.}\\
 
+Los datos disponibles son densidad, PD1, PD2, PD3, PD4, X y Y, sin embargo, las coordenadas de las
+plantas no son un dato relevante para la clasificación que se realizó porque la misma busca determinar
+la densidad solo a partir de los pesos frescos por calibre, por lo tanto se excluyeron del set de datos.
+
 \noindent
 \textbf{Limpieza de los datos.}\\
+
+No fue necesario realizar una limpieza de datos considerando la calidad de los mismos.\\
 
 \noindent
 \textbf{Estructuración de los datos.}\\
 
+No es necesario calcular atributos derivados para realizar la clasificación; No se debe realizar
+una normalización de índices porque los valores de entrada se encuentran en la misma escala y unidad,
+tampoco en necesaria una normalización de puntuaciones porque se cambiaría el patron de los datos.\\
+
 \noindent
 \textbf{Integración de los datos.}\\
 
+La media y varianza son dos datos combinados calculados a partir de los datos iniciales, estos nuevos
+datos son necesarios durante el cálculo probabilístico del algoritmo clasificador y se
+obtienen al principio de la ejecución llamando a la función \textbf{media\_varianza} que retorna
+dos arreglos matriciales \textbf{m} y \textbf{v}, con un número de filas igual a la cantidad de clases, en este caso tres filas,
+y la cantidad de columnas es igual a la cantidad de características de entrada, es decir, cuatro
+para la data que se está empleando, cada campo de la matriz contiene la media o varianza (dependiendo de la
+matriz que se este revisando) para esa característica y esa clase.\\
+
 \noindent
 \textbf{Formateo de los datos.}\\
+
+Los datos de entrada se encuentran ordenados según su clase, por lo tanto deben ser desordenados
+para permitir que el algoritmo de clasificación obtenga datos de cada clase para realizar los
+cálculos, se desordenaron las filas de datos empleando la función \textbf{random.shuffle} del paquete
+\textbf{numpy} para python.\\
 
 \section{Modelado}
 
 \noindent
 \textbf{Técnica de modelado.}\\
 
-El desarrollo del clasificador se realizó empleando Bayes Naive Gaussiano, luego de leer los datos se llama a la función bayes\_naive\_gaussiano que recibe como entrada los siguientes parámetros:
+El desarrollo del clasificador se realizó empleando Bayes Naive Gaussiano, luego de leer los datos se llama a la función \textbf{bayes\_naive\_gaussiano} que recibe como entrada los siguientes parámetros:
 \begin{itemize}
 	\item{set\_entrenamiento: es un array de numpy con las columnas número de planta, densidad, PD1, PD2, PD3, PD4, X y Y, su cantidad de filas depende de la cantidad de datos que sean destinados a formar parte del entrenamiento que es este caso en el 80\% de los datos iniciales, es decir, aproximadamente 2272 filas.}
 	\item{set\_test: es un array de numpy con las columnas PD1, PD2, PD3 y PD4, su cantidad de filas depende de la cantidad de datos que sean destinados a formar parte del set de pruebas que es este caso en el 20\% de los datos iniciales, es decir, aproximadamente 567 filas.}
