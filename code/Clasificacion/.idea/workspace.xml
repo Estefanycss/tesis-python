@@ -4,15 +4,7 @@
     <option name="SCOPE_TYPE" value="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1d1fa181-c472-47b8-b4d1-44206bd8a2b2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../Formato_Anteproyecto/Anteproyecto.fdb_latexmk" beforeDir="false" afterPath="$PROJECT_DIR$/../../Formato_Anteproyecto/Anteproyecto.fdb_latexmk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Formato_Anteproyecto/Anteproyecto.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../Formato_Anteproyecto/Anteproyecto.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Formato_Anteproyecto/Anteproyecto.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/../../Formato_Anteproyecto/Anteproyecto.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Formato_Anteproyecto/Anteproyecto.synctex.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../../Formato_Anteproyecto/Anteproyecto.synctex.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Formato_Anteproyecto/capitulo4.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../Formato_Anteproyecto/capitulo4.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clasificador.py" beforeDir="false" afterPath="$PROJECT_DIR$/clasificador.py" afterDir="false" />
-    </list>
+    <list default="true" id="1d1fa181-c472-47b8-b4d1-44206bd8a2b2" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +85,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/clasificador.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
+            <state relative-caret-position="-377">
               <caret line="41" column="82" lean-forward="true" selection-start-line="41" selection-start-column="82" selection-end-line="41" selection-end-column="82" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
@@ -354,7 +346,7 @@
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Terminal" order="11" />
-      <window_info anchor="bottom" id="Python Console" order="12" weight="0.43373495" />
+      <window_info active="true" anchor="bottom" id="Python Console" order="12" visible="true" weight="0.43373495" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -415,7 +407,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/clasificador.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
+        <state relative-caret-position="-377">
           <caret line="41" column="82" lean-forward="true" selection-start-line="41" selection-start-column="82" selection-end-line="41" selection-end-column="82" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />

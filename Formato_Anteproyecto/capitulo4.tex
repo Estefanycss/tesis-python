@@ -119,11 +119,8 @@ cálculos, se desordenaron las filas de datos empleando la función \textbf{rand
 Para la clasificación de los datos se empleó un modelo probabilístico basado en el teorema de Bayes Naive para una distribución
 gaussiana, se seleccionó esta técnica por tener como supuesto la independencia entre las variables y su distribución
 espacial. Las pruebas del modelo se realizaron separando los datos en un set de entrenamiento que posee el 80\% de los
-datos y el otro 20\% se destino al set de pruebas, luego de obtener los resultados para el set de pruebas se realiza el
-cálculo de la matriz de confusión empleando la función \textbf{confusion\_matrix} del módulo \textbf{metrics} del paquete \textbf{sklearn}
-y posteriormente se realiza la curva característica operativa del receptor con el enfoque multiclase usando los métodos
-\textbf{roc\_curve} y \textbf{auc} del mismo paquete, el primer método computa la curva ROC graficando las fracciones de
-verdaderos positivos y falsos positivos para distintos umbrales, y la función \textbf{auc} computa el área bajo la curva.\\
+datos y el otro 20\% se destino al set de pruebas, luego de obtener los resultados para el set de pruebas se realiza la
+evaluación del modelo empleando la curva característica operativa del receptor.\\
 
 El desarrollo del clasificador se realizó empleando Bayes Naive Gaussiano como se indica anteriormente, luego de leer los datos se llama a la función
 \textbf{bayes\_naive\_gaussiano} que recibe como entrada los siguientes parámetros:
@@ -144,12 +141,12 @@ Y ejecuta los siguientes pasos:
 	\item Cálculo de la media y varianza:
 	como se indicó previamente los valores de las medias y varianzas de cada característica para cada clase son necesarios
 	para realizar los cálculos probabilísticos, en este paso del algoritmo se llama a la función \textbf{media\_varianza}, para
-	realizar dicho procedimiento empleando la fórmula $\bar{x}=\frac{\sum_{i=1}^n{x_{i}}}{n}$ para la media y
-	$\sigma^2=\frac{\sum_{i=1}^n{\left(x_{i}-\bar{x}\right)^2}}{n}$ para la varianza.\\
+	realizar dicho procedimiento empleando para la media la fórmula: \[\bar{x}=\frac{\sum_{i=1}^n{x_{i}}}{n}\] y para la varianza:
+	\[\sigma^2=\frac{\sum_{i=1}^n{\left(x_{i}-\bar{x}\right)^2}}{n}\]\\
 	\item Cálculo de probabilidades previas:
 	ejecuta la función \textbf{pre\_prob} que recibe un vector unidimensional con los valores de las clases
 	del set de entrenamiento y aplica la fórmula
-	$Prob\;Previa\left(c\right)=\frac{ocurrencias\;de\;la\;clase\;c}{Nro\;total\;de\;datos}$
+	\[Prob\;Previa\left(c\right)=\frac{ocurrencias\;de\;la\;clase\;c}{Nro\;total\;de\;datos}\]
 	retornando un vector unidimensional con la probabilidad previa de cada clase.\\
 	\item Cálculo de la probabilidad posterior:
 	es necesario calcular la probabilidad posterior del set de pruebas dada una clase \textbf{c},
@@ -183,11 +180,18 @@ Y ejecuta los siguientes pasos:
 	Luego se toma la probabilidad condicional mayor entre las calculadas para ese set de prueba
 	obteniendo así la predicción.\\
 
-	\item Realiza el análisis de los resultados empleando la curva característica operativa del receptor:
 \end{enumerate}
 
 \noindent
 \textbf{Método de evaluación de los modelos.}\\
+
+Para evaluar el modelo se emplean curvas ROC, primero se realiza el cálculo de la matriz de confusión empleando la función
+\textbf{confusion\_matrix} del módulo \textbf{metrics} del paquete \textbf{sklearn}
+y posteriormente se realiza la curva característica operativa del receptor con el enfoque multiclase usando los métodos
+\textbf{roc\_curve} y \textbf{auc} del mismo paquete, el primer método computa la curva ROC graficando las fracciones de
+verdaderos positivos y falsos positivos para distintos umbrales, y la función \textbf{auc} computa el área bajo la curva.
+Según Ato y López (1995) un área bajo la curva igual a 1 correspondería a una prueba diagnóstica perfecta y un
+área bajo la curva igual a 0.5 indica que se obtuvo una prueba sin precisión diagnóstica.
 
 \section{Evaluación}
 
