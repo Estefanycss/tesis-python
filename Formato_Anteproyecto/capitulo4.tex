@@ -116,20 +116,75 @@ cálculos, se desordenaron las filas de datos empleando la función \textbf{rand
 \noindent
 \textbf{Técnica de modelado.}\\
 
-El desarrollo del clasificador se realizó empleando Bayes Naive Gaussiano, luego de leer los datos se llama a la función \textbf{bayes\_naive\_gaussiano} que recibe como entrada los siguientes parámetros:
+Para la clasificación de los datos se empleó un modelo probabilístico basado en el teorema de Bayes Naive para una distribución
+gaussiana, se seleccionó esta técnica por tener como supuesto la independencia entre las variables y su distribución
+espacial. Las pruebas del modelo se realizaron separando los datos en un set de entrenamiento que posee el 80\% de los
+datos y el otro 20\% se destino al set de pruebas, luego de obtener los resultados para el set de pruebas se realiza el
+cálculo de la matriz de confusión empleando la función \textbf{confusion\_matrix} del módulo \textbf{metrics} del paquete \textbf{sklearn}
+y posteriormente se realiza la curva característica operativa del receptor con el enfoque multiclase usando los métodos
+\textbf{roc\_curve} y \textbf{auc} del mismo paquete, el primer método computa la curva ROC graficando las fracciones de
+verdaderos positivos y falsos positivos para distintos umbrales, y la función \textbf{auc} computa el área bajo la curva.\\
+
+El desarrollo del clasificador se realizó empleando Bayes Naive Gaussiano como se indica anteriormente, luego de leer los datos se llama a la función
+\textbf{bayes\_naive\_gaussiano} que recibe como entrada los siguientes parámetros:
 \begin{itemize}
-	\item{set\_entrenamiento: es un array de numpy con las columnas número de planta, densidad, PD1, PD2, PD3, PD4, X y Y, su cantidad de filas depende de la cantidad de datos que sean destinados a formar parte del entrenamiento que es este caso en el 80\% de los datos iniciales, es decir, aproximadamente 2272 filas.}
-	\item{set\_test: es un array de numpy con las columnas PD1, PD2, PD3 y PD4, su cantidad de filas depende de la cantidad de datos que sean destinados a formar parte del set de pruebas que es este caso en el 20\% de los datos iniciales, es decir, aproximadamente 567 filas.}
-	\item{clases\_set\_test: es un array de numpy y cada fila representa la clase (densidad) para los datos en el set de test en el mismo número de fila, su cantidad de filas depende de la cantidad de datos que sean destinados a formar parte del set de pruebas que es este caso en el 20\% de los datos iniciales, es decir, aproximadamente 567 filas.}
+	\item{set\_entrenamiento: es un array de numpy con las columnas número de planta, densidad, PD1, PD2, PD3, PD4, X y Y, su
+	cantidad de filas depende de la cantidad de datos que sean destinados a formar parte del entrenamiento que es este caso en
+	el 80\% de los datos iniciales, es decir, aproximadamente 2272 filas.}
+	\item{set\_test: es un array de numpy con las columnas PD1, PD2, PD3 y PD4, su cantidad de filas depende de la cantidad de
+	datos que sean destinados a formar parte del set de pruebas que es este caso en el 20\% de los datos iniciales, es decir,
+	aproximadamente 567 filas.}
+	\item{clases\_set\_test: es un array de numpy y cada fila representa la clase (densidad) para los datos en el set de test
+	en el mismo número de fila, su cantidad de filas depende de la cantidad de datos que sean destinados a formar parte del set
+	de pruebas que es este caso en el 20\% de los datos iniciales, es decir, aproximadamente 567 filas.}
 \end{itemize}
 
 Y ejecuta los siguientes pasos:
 \begin{enumerate}
-	\item {Realiza el cálculo de la media y varianza por cada característica y cada clase.}
-	\item {Calcula la probabilidad previa para cada clase.}
-	\item {Hace el cálculo de la probabilidad posterior de las características del set de pruebas para cada clase.}
-	\item {Obtiene las probabilidades condicionales según el Teorema de Bayes y las predicciones.}
-	\item {Realiza el análisis de los resultados empleando la curva característica operativa del receptor.}
+	\item Cálculo de la media y varianza:
+	como se indicó previamente los valores de las medias y varianzas de cada característica para cada clase son necesarios
+	para realizar los cálculos probabilísticos, en este paso del algoritmo se llama a la función \textbf{media\_varianza}, para
+	realizar dicho procedimiento empleando la fórmula $\bar{x}=\frac{\sum_{i=1}^n{x_{i}}}{n}$ para la media y
+	$\sigma^2=\frac{\sum_{i=1}^n{\left(x_{i}-\bar{x}\right)^2}}{n}$ para la varianza.\\
+	\item Cálculo de probabilidades previas:
+	ejecuta la función \textbf{pre\_prob} que recibe un vector unidimensional con los valores de las clases
+	del set de entrenamiento y aplica la fórmula
+	$Prob\;Previa\left(c\right)=\frac{ocurrencias\;de\;la\;clase\;c}{Nro\;total\;de\;datos}$
+	retornando un vector unidimensional con la probabilidad previa de cada clase.\\
+	\item Cálculo de la probabilidad posterior:
+	es necesario calcular la probabilidad posterior del set de pruebas dada una clase \textbf{c},
+	para ello se llama al método \textbf{prob\_caracteristica\_clase} que recibe como
+	parámetros la matriz de medias, la matriz de varianzas y el set de pruebas; tomando en cuenta la
+	fórmula para el cálculo de probabilidades de una distribución gaussiana:
+	\[
+	P\left(x\right) = \frac{1}{\sqrt{2\pi\sigma^{2}}}e^{-\frac{\left(x-\mu\right)^{2}}{2\sigma^{2}}}
+	\]
+	se puede definir que la probabilidad posterior para una característica del set de prueba dada una
+	clase \textbf{c} es:
+	\[
+	P\left(x_{i}|c\right) = \frac{1}{\sqrt{2\pi\sigma^{2}_{x_{i},c}}}
+	e^{-\frac{\left(x_{i}-\bar{x}_{x_{i},c}\right)^{2}}{2\sigma^{2}_{x_{i,c}}}}
+	\]
+	donde $x_{i}$ es una característica de esa fila del set de datos; el código de la función se encarga de
+	obtener el resultado de esa fórmula para cada característica dentro de la fila del set de datos para
+	la clase dada y luego multiplica los valores de dichas probabilidades obteniendo la probabilidad posterior
+	para esa clase. Esta función retorna una matriz con una cantidad de filas igual a las filas del set de
+	pruebas y por cada fila posee varios valores, cada uno de estos indica la probabilidad posterior para una clase.\\
+
+	\item Obtiene las probabilidades condicionales y las predicciones:
+	finalmente para calcular la probabilidad condicional de una instancia de test se emplea la función
+	\textbf{prob\_condicional} que recibe como parámetros el set de pruebas, la cantidad de clases, el
+	arreglo con las probabilidades posteriores, el arreglo con las probabilidades previas y las verdaderas
+	clases del set de pruebas; Empleando el teorema de Bayes obtiene la probabilidad condicional de cada
+	clase para una fila del set de pruebas:
+	\[P\left(c_{i}|x\right)=
+	\frac{P\left(c_{i}\right)P\left(x|c_{i}\right)}{\sum_{j=1}^{n}P\left(c_{j}\right)P\left(x|c_{j}\right)}
+	\]
+	Luego se toma la mayor probabilidad condicional entre las calculadas para ese set de prueba
+	obteniendo así la predicción.
+
+
+	\item Realiza el análisis de los resultados empleando la curva característica operativa del receptor:
 \end{enumerate}
 
 \noindent

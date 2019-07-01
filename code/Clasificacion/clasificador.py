@@ -95,35 +95,6 @@ def prob_caracteristica_clase(m, v, set_test):
     return pcc
 
 
-# Estandarizacion de la data
-
-def estandarizacion(m, v, set_test, set_entrenamiento, set_test_completo):
-    cantidad_caracteristicas = m.shape[1]
-
-    for i in range(0, len(set_entrenamiento)):
-        if set_entrenamiento[i, 1] == 1:
-            for j in range(0, cantidad_caracteristicas):
-                set_entrenamiento[i, j + 2] = (set_entrenamiento[i, j + 2] - m[0, j]) / v[0, j]
-        if set_entrenamiento[i, 1] == 2:
-            for j in range(0, cantidad_caracteristicas):
-                set_entrenamiento[i, j + 2] = (set_entrenamiento[i, j + 2] - m[1, j]) / v[1, j]
-        if set_entrenamiento[i, 1] == 3:
-            for j in range(0, cantidad_caracteristicas):
-                set_entrenamiento[i, j + 2] = (set_entrenamiento[i, j + 2] - m[2, j]) / v[2, j]
-
-    for i in range(0, len(set_test_completo)):
-        if set_test_completo[i, 1] == 1:
-            for j in range(0, cantidad_caracteristicas):
-                set_test_completo[i, j + 2] = (set_test_completo[i, j + 2] - m[0, j]) / v[0, j]
-        if set_test_completo[i, 1] == 2:
-            for j in range(0, cantidad_caracteristicas):
-                set_test_completo[i, j + 2] = (set_test_completo[i, j + 2] - m[1, j]) / v[1, j]
-        if set_test_completo[i, 1] == 3:
-            for j in range(0, cantidad_caracteristicas):
-                set_test_completo[i, j + 2] = (set_test_completo[i, j + 2] - m[2, j]) / v[2, j]
-
-    return (set_entrenamiento, set_test_completo[:, [2, 3, 4, 5]])
-
 
 # CALCULO DE LA PROBABILIDAD CONDICIONAL PARA CADA CLASE USANDO EL TEOREMA DE BAYES
 # Funcion para calcular la media y varianza de los datos, teniendo como parametros `x`
@@ -171,7 +142,10 @@ def curvas_roc(clases_set_test, prediccion, cant_clases, prob_cond):
     # https://stackoverflow.com/questions/50941223/plotting-roc-curve-with-multiple-classes
     # http://benalexkeen.com/scoring-classifier-models-using-scikit-learn/
     matrix_confusion = confusion_matrix(clases_set_test, prediccion)
-    print(matrix_confusion)
+    print('\n---------------------------------------------------------------------------------------------------\n'
+          'Matriz de confusión'
+          '\n---------------------------------\n',
+          matrix_confusion)
     # plt.style.use('ggplot')
     # Compute ROC curve and ROC AUC for each class
 
@@ -207,14 +181,13 @@ def curvas_roc(clases_set_test, prediccion, cant_clases, prob_cond):
     plt.show()
 
 
-def bayes_naive_gaussiano(set_entrenamiento, set_test, clases_set_test, set_test_completo):
+def bayes_naive_gaussiano(set_entrenamiento, set_test, clases_set_test):
     # caracteristicas contiene los valores de PD1, PD2, PD3 y PD4 para el entrenamiento
     caracteristicas = set_entrenamiento[:, [2, 3, 4, 5]]
     # clases contiene el valor de la densidad para cada planta para el entrenamiento
     clases = set_entrenamiento[:, 1]
     # Llamando los metodos que calculan la media, varianza y probabilidades
     m, v = media_varianza(caracteristicas, clases, set_entrenamiento)
-    # set_entrenamiento, set_test = estandarizacion(m,v,set_test,set_entrenamiento, set_test_completo)
     prob_previa = pre_prob(clases)
     pcc = prob_caracteristica_clase(m, v, set_test)
     cant_clases = m.shape[0]
@@ -241,13 +214,8 @@ cantidad_muestras = int(len(data) * 0.2)
 # se crean dos array a partir de data que van a ser el de test y entrenamiento
 
 set_test = data[0:cantidad_muestras, [2, 3, 4, 5]]
-set_test_completo = data[0:cantidad_muestras, :]
 clases_set_test = data[0:cantidad_muestras, 1]
 set_entrenamiento = data[cantidad_muestras: len(data), :]
-print(set_entrenamiento)
-# set_entrenamiento = data
 
-bayes_naive_gaussiano(set_entrenamiento, set_test, clases_set_test, set_test_completo)
+bayes_naive_gaussiano(set_entrenamiento, set_test, clases_set_test)
 
-# Prueba de hipotesis para area bajo la curva ROC
-# Correr esto con GBN

@@ -5,10 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1d1fa181-c472-47b8-b4d1-44206bd8a2b2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../Formato_Anteproyecto/Anteproyecto.fdb_latexmk" beforeDir="false" afterPath="$PROJECT_DIR$/../../Formato_Anteproyecto/Anteproyecto.fdb_latexmk" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Formato_Anteproyecto/Anteproyecto.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../Formato_Anteproyecto/Anteproyecto.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Formato_Anteproyecto/Anteproyecto.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/../../Formato_Anteproyecto/Anteproyecto.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Formato_Anteproyecto/Anteproyecto.synctex.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../../Formato_Anteproyecto/Anteproyecto.synctex.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Formato_Anteproyecto/Bli.aux" beforeDir="false" afterPath="$PROJECT_DIR$/../../Formato_Anteproyecto/Bli.aux" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Formato_Anteproyecto/Capitulo4.aux" beforeDir="false" afterPath="$PROJECT_DIR$/../../Formato_Anteproyecto/Capitulo4.aux" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Formato_Anteproyecto/capitulo4.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../Formato_Anteproyecto/capitulo4.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clasificador.py" beforeDir="false" afterPath="$PROJECT_DIR$/clasificador.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -63,12 +68,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="7657" />
+          <entry key="py" value="7682" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="7657" />
+          <entry key="Python" value="7682" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -90,12 +95,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/clasificador.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="371">
-              <caret line="233" selection-start-line="233" selection-end-line="233" />
+            <state relative-caret-position="277">
+              <caret line="220" lean-forward="true" selection-start-line="220" selection-end-line="220" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
-                <marker date="1561686734863" expanded="true" signature="6245:7649" ph="..." />
-                <marker date="1561686734863" expanded="true" signature="7730:9185" ph="..." />
+                <marker date="1561956952420" expanded="true" signature="4769:6173" ph="..." />
+                <marker date="1561956952420" expanded="true" signature="6254:7908" ph="..." />
               </folding>
             </state>
           </provider>
@@ -127,6 +132,11 @@
         <option value="Python Script" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>auc</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
@@ -241,9 +251,6 @@
       <module name="test" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -349,7 +356,7 @@
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Terminal" order="11" />
-      <window_info anchor="bottom" id="Python Console" order="12" weight="0.57425743" />
+      <window_info active="true" anchor="bottom" id="Python Console" order="12" visible="true" weight="0.43440595" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -410,12 +417,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/clasificador.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="233" selection-start-line="233" selection-end-line="233" />
+        <state relative-caret-position="277">
+          <caret line="220" lean-forward="true" selection-start-line="220" selection-end-line="220" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
-            <marker date="1561686734863" expanded="true" signature="6245:7649" ph="..." />
-            <marker date="1561686734863" expanded="true" signature="7730:9185" ph="..." />
+            <marker date="1561956952420" expanded="true" signature="4769:6173" ph="..." />
+            <marker date="1561956952420" expanded="true" signature="6254:7908" ph="..." />
           </folding>
         </state>
       </provider>
