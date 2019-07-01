@@ -51,8 +51,8 @@ def prob_feature_class(m, v, x):
     for i in range(0, 2):
         product = 1
         for j in range(0, n_features):
-            product = product * (1/sqrt(2*3.14*v[i][j])) * exp(-0.5
-                                 * pow((x[j] - m[i][j]),2)/v[i][j])
+            product = product * (1/sqrt(2*3.14*v[i][j])) * exp(-
+                                  pow((x[j] - m[i][j]),2)/v[i][j]*2)
         pfc[i] = product
     print('pfc\n',pfc)
     return pfc

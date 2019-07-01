@@ -49,7 +49,7 @@ def media_varianza(x, y, set_entrenamiento):
 
     for i in range(0, (len(cantidad_clases))):
         for j in range(0, cantidad_caracteristicas):
-            v[i, j] = v[i, j] / cantidad_clases[i + 1]
+            v[i, j] = v[i, j] / (cantidad_clases[i + 1]-1)
 
     print('\n---------------------------------------------------------------------------------------------------\n'
           'Media de cada caracteristica (columna) para cada clase (fila - densidad)'

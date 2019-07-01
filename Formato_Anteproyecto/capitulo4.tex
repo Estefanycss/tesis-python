@@ -142,7 +142,7 @@ Y ejecuta los siguientes pasos:
 	como se indicó previamente los valores de las medias y varianzas de cada característica para cada clase son necesarios
 	para realizar los cálculos probabilísticos, en este paso del algoritmo se llama a la función \textbf{media\_varianza}, para
 	realizar dicho procedimiento empleando para la media la fórmula: \[\bar{x}=\frac{\sum_{i=1}^n{x_{i}}}{n}\] y para la varianza:
-	\[\sigma^2=\frac{\sum_{i=1}^n{\left(x_{i}-\bar{x}\right)^2}}{n}\]\\
+	\[\sigma^2=\frac{\sum_{i=1}^n{\left(x_{i}-\bar{x}\right)^2}}{n - 1}\]\\
 	\item Cálculo de probabilidades previas:
 	ejecuta la función \textbf{pre\_prob} que recibe un vector unidimensional con los valores de las clases
 	del set de entrenamiento y aplica la fórmula
@@ -178,8 +178,7 @@ Y ejecuta los siguientes pasos:
 	\frac{P\left(c_{i}\right)P\left(x|c_{i}\right)}{\sum_{j=1}^{n}P\left(c_{j}\right)P\left(x|c_{j}\right)}
 	\]
 	Luego se toma la probabilidad condicional mayor entre las calculadas para ese set de prueba
-	obteniendo así la predicción.\\
-
+	obteniendo así la predicción.
 \end{enumerate}
 
 \noindent
@@ -198,8 +197,40 @@ Según Ato y López (1995) un área bajo la curva igual a 1 correspondería a un
 \noindent
 \textbf{Evaluación de los resultados.}\\
 
+Cada vez que se ejecuta el algoritmo el mismo indica que obtuvo un porcentaje de aciertos de aproximadamente
+45\% y de desaciertos de aproximadamente 55\%, en cada corrida los datos que emplea el algoritmo para entrenamiento
+y prueba varian por lo tanto estos valores pueden cambiar ligeramente. En cuanto a la curva característica
+operativa del receptor se obtiene:
+
+\begin{center}
+	\includegraphics[scale=0.6]{roc.png}
+\end{center}
+
+Cuyos trazos indican que no es una mala clasificación pero tampoco es una clasificación
+óptima, si se observan los valores para el área bajo la curva de la densidad 1, 2 y 3
+se obtuvieron 0.68, 0.56 y 0.61 respectivamente que según el estándar indicado anteriormente
+están entre una precisión regular y no tener precisión diagnóstica.\\
+
+Se puede demostrar que el algoritmo está generando una clasificación empleando el método de Bayes Naive Gaussiano
+y está obteniendo los resultados del método de evaluación aunque los mismos no sean los deseados.\\
+
 \noindent
 \textbf{Proceso de revisión.}\\
 
+Los objetivos de este proceso fueron diagnosticar el formato de las
+variables de entrada y salida para el clasificador, establecer el tipo de
+algoritmo de Bayes Naive a emplear y las características para el entrenamiento,
+realizar la implementación del algoritmo, realizar las pruebas de funcionamiento
+y la comparación estadística, todos estos objetivos fueron cubiertos durante el
+desarrollo de esta metodología y se logró el diseño de un clasificador de tubérculos
+de papa criolla para diferentes densidades de siembra a partir de los pesos frescos
+por calibre empleando Bayes Naive.
+
 \noindent
 \textbf{Determinación de futuras fases.}\\
+
+En cuanto al proceso actual algunas mejoras posibles podrían ser la eliminación
+de las características con valores iguales a cero o emplear otros métodos para
+clasificar los datos como las redes neuronales, se podría implementar un análisis
+espacial e incluso realizar una revisión más profunda a los datos, cualquiera de
+estás alternativas podría mejorar o empeorar el porcentaje de aciertos de la clasificación actual.\\
