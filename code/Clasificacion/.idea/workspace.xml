@@ -9,8 +9,6 @@
       <change beforePath="$PROJECT_DIR$/../../Formato_Anteproyecto/Anteproyecto.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../Formato_Anteproyecto/Anteproyecto.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Formato_Anteproyecto/Anteproyecto.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/../../Formato_Anteproyecto/Anteproyecto.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Formato_Anteproyecto/Anteproyecto.synctex.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../../Formato_Anteproyecto/Anteproyecto.synctex.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Formato_Anteproyecto/Bli.aux" beforeDir="false" afterPath="$PROJECT_DIR$/../../Formato_Anteproyecto/Bli.aux" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Formato_Anteproyecto/Capitulo4.aux" beforeDir="false" afterPath="$PROJECT_DIR$/../../Formato_Anteproyecto/Capitulo4.aux" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Formato_Anteproyecto/capitulo4.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../Formato_Anteproyecto/capitulo4.tex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clasificador.py" beforeDir="false" afterPath="$PROJECT_DIR$/clasificador.py" afterDir="false" />
@@ -68,12 +66,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="7682" />
+          <entry key="py" value="7735" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="7682" />
+          <entry key="Python" value="7735" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -95,12 +93,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/clasificador.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="277">
-              <caret line="220" lean-forward="true" selection-start-line="220" selection-end-line="220" />
+            <state relative-caret-position="256">
+              <caret line="41" column="82" lean-forward="true" selection-start-line="41" selection-start-column="82" selection-end-line="41" selection-end-column="82" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
-                <marker date="1561956952420" expanded="true" signature="4769:6173" ph="..." />
-                <marker date="1561956952420" expanded="true" signature="6254:7908" ph="..." />
+                <marker date="1562006208871" expanded="true" signature="5229:6633" ph="..." />
+                <marker date="1562006208871" expanded="true" signature="6714:8368" ph="..." />
               </folding>
             </state>
           </provider>
@@ -158,7 +156,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" fullScreen="true">
     <option name="width" value="1440" />
     <option name="height" value="900" />
   </component>
@@ -356,7 +354,7 @@
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Terminal" order="11" />
-      <window_info active="true" anchor="bottom" id="Python Console" order="12" visible="true" weight="0.43440595" />
+      <window_info anchor="bottom" id="Python Console" order="12" weight="0.43373495" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -417,12 +415,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/clasificador.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="220" lean-forward="true" selection-start-line="220" selection-end-line="220" />
+        <state relative-caret-position="256">
+          <caret line="41" column="82" lean-forward="true" selection-start-line="41" selection-start-column="82" selection-end-line="41" selection-end-column="82" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
-            <marker date="1561956952420" expanded="true" signature="4769:6173" ph="..." />
-            <marker date="1561956952420" expanded="true" signature="6254:7908" ph="..." />
+            <marker date="1562006208871" expanded="true" signature="5229:6633" ph="..." />
+            <marker date="1562006208871" expanded="true" signature="6714:8368" ph="..." />
           </folding>
         </state>
       </provider>

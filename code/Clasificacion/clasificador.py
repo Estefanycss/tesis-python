@@ -25,20 +25,31 @@ def media_varianza(x, y, set_entrenamiento):
         if set_entrenamiento[i, 1] == 1:
             for j in range(0, cantidad_caracteristicas):
                 m[0, j] = m[0, j] + set_entrenamiento[i, j + 2]
-                v[0, j] = v[0, j] + (set_entrenamiento[i, j + 2]) ** 2
         if set_entrenamiento[i, 1] == 2:
             for j in range(0, cantidad_caracteristicas):
                 m[1, j] = m[1, j] + set_entrenamiento[i, j + 2]
-                v[1, j] = v[1, j] + (set_entrenamiento[i, j + 2]) ** 2
         if set_entrenamiento[i, 1] == 3:
             for j in range(0, cantidad_caracteristicas):
                 m[2, j] = m[2, j] + set_entrenamiento[i, j + 2]
-                v[2, j] = v[2, j] + (set_entrenamiento[i, j + 2]) ** 2
 
     for i in range(0, (len(cantidad_clases))):
         for j in range(0, cantidad_caracteristicas):
             m[i, j] = m[i, j] / cantidad_clases[i + 1]
-            v[i, j] = (v[i, j] / cantidad_clases[i + 1]) - (m[i, j] ** 2)
+
+    for i in range(0, len(set_entrenamiento)):
+        if set_entrenamiento[i, 1] == 1:
+            for j in range(0, cantidad_caracteristicas):
+                v[0, j] = v[0, j] + ((set_entrenamiento[i, j + 2] - m[0, j]) ** 2)
+        if set_entrenamiento[i, 1] == 2:
+            for j in range(0, cantidad_caracteristicas):
+                v[1, j] = v[1, j] + ((set_entrenamiento[i, j + 2] - m[1, j]) ** 2)
+        if set_entrenamiento[i, 1] == 3:
+            for j in range(0, cantidad_caracteristicas):
+                v[2, j] = v[2, j] + ((set_entrenamiento[i, j + 2] - m[2, j]) ** 2)
+
+    for i in range(0, (len(cantidad_clases))):
+        for j in range(0, cantidad_caracteristicas):
+            v[i, j] = v[i, j] / cantidad_clases[i + 1]
 
     print('\n---------------------------------------------------------------------------------------------------\n'
           'Media de cada caracteristica (columna) para cada clase (fila - densidad)'
