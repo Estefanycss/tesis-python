@@ -4,19 +4,7 @@
     <option name="SCOPE_TYPE" value="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1d1fa181-c472-47b8-b4d1-44206bd8a2b2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../Formato_Anteproyecto/Anteproyecto.fdb_latexmk" beforeDir="false" afterPath="$PROJECT_DIR$/../../Formato_Anteproyecto/Anteproyecto.fdb_latexmk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Formato_Anteproyecto/Anteproyecto.fls" beforeDir="false" afterPath="$PROJECT_DIR$/../../Formato_Anteproyecto/Anteproyecto.fls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Formato_Anteproyecto/Anteproyecto.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../Formato_Anteproyecto/Anteproyecto.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Formato_Anteproyecto/Anteproyecto.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/../../Formato_Anteproyecto/Anteproyecto.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Formato_Anteproyecto/Anteproyecto.synctex.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../../Formato_Anteproyecto/Anteproyecto.synctex.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Formato_Anteproyecto/Bli.aux" beforeDir="false" afterPath="$PROJECT_DIR$/../../Formato_Anteproyecto/Bli.aux" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Formato_Anteproyecto/Capitulo4.aux" beforeDir="false" afterPath="$PROJECT_DIR$/../../Formato_Anteproyecto/Capitulo4.aux" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Formato_Anteproyecto/capitulo4.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../Formato_Anteproyecto/capitulo4.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GBNgender.py" beforeDir="false" afterPath="$PROJECT_DIR$/GBNgender.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clasificador.py" beforeDir="false" afterPath="$PROJECT_DIR$/clasificador.py" afterDir="false" />
-    </list>
+    <list default="true" id="1d1fa181-c472-47b8-b4d1-44206bd8a2b2" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,8 +87,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/clasificador.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="229">
-              <caret line="51" column="57" selection-start-line="51" selection-start-column="57" selection-end-line="51" selection-end-column="57" />
+            <state relative-caret-position="705">
+              <caret line="47" column="36" lean-forward="true" selection-start-line="47" selection-start-column="36" selection-end-line="47" selection-end-column="36" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
                 <marker date="1562020632097" expanded="true" signature="5233:6637" ph="..." />
@@ -451,8 +439,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/clasificador.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="51" column="57" selection-start-line="51" selection-start-column="57" selection-end-line="51" selection-end-column="57" />
+        <state relative-caret-position="705">
+          <caret line="47" column="36" lean-forward="true" selection-start-line="47" selection-start-column="36" selection-end-line="47" selection-end-column="36" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
             <marker date="1562020632097" expanded="true" signature="5233:6637" ph="..." />
