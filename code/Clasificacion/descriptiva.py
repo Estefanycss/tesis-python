@@ -63,9 +63,6 @@ print("------------- Moda")
 print(density.mode())
 print(weights.mode())
 
-# data = [go.Histogram(x=values['density'])]
-# plotly.plot(data, filename='pandas/simple-histogram')
-
 grouped_data = values.groupby(['densidad'])
 print("------------- Estadisticas descriptivas agrupando por densidad")
 print("Peso fresco calibre 1")
@@ -143,3 +140,116 @@ plt.xticks(range(len(data_corr_3.columns)), data_corr_3.columns)
 plt.yticks(range(len(data_corr_3.columns)), data_corr_3.columns)
 plt.colorbar()
 plt.show()
+
+# Graficas nubes de puntos
+# PD1
+trace = go.Scatter(
+    x=values['PD1'],
+    y=values['densidad'],
+    mode='markers',
+    marker=dict(
+        size=10,
+        color='rgba(255,167,38,0.9)'
+    )
+)
+
+layout = go.Layout(
+    title='Dispersión de PD1 respecto a la densidad',
+    xaxis=dict(
+        title='PD1'
+    ),
+    yaxis=dict(
+        title='densidad'
+    ),
+    showlegend=False
+)
+
+data = [trace]
+
+figPD1 = go.Figure(data=data, layout=layout)
+
+plotly.offline.plot(figPD1, filename='puntosPD1.html')
+
+# PD2
+trace = go.Scatter(
+    x=values['PD2'],
+    y=values['densidad'],
+    mode='markers',
+    marker=dict(
+        size=10,
+        color='rgba(102,187,106,0.9)'
+    )
+)
+
+layout = go.Layout(
+    title='Dispersión de PD2 respecto a la densidad',
+    xaxis=dict(
+        title='PD2'
+    ),
+    yaxis=dict(
+        title='densidad'
+    ),
+    showlegend=False
+)
+
+data = [trace]
+
+figPD1 = go.Figure(data=data, layout=layout)
+
+plotly.offline.plot(figPD1, filename='puntosPD2.html')
+
+# PD3
+trace = go.Scatter(
+    x=values['PD3'],
+    y=values['densidad'],
+    mode='markers',
+    marker=dict(
+        size=10,
+        color='rgba(66,165,245,0.9)'
+    )
+)
+
+layout = go.Layout(
+    title='Dispersión de PD3 respecto a la densidad',
+    xaxis=dict(
+        title='PD3'
+    ),
+    yaxis=dict(
+        title='densidad'
+    ),
+    showlegend=False
+)
+
+data = [trace]
+
+figPD1 = go.Figure(data=data, layout=layout)
+
+plotly.offline.plot(figPD1, filename='puntosPD3.html')
+
+# PD4
+trace = go.Scatter(
+    x=values['PD4'],
+    y=values['densidad'],
+    mode='markers',
+    marker=dict(
+        size=10,
+        color='rgba(171,71,188,0.9)'
+    )
+)
+
+layout = go.Layout(
+    title='Dispersión de PD4 respecto a la densidad',
+    xaxis=dict(
+        title='PD4'
+    ),
+    yaxis=dict(
+        title='densidad'
+    ),
+    showlegend=False
+)
+
+data = [trace]
+
+figPD1 = go.Figure(data=data, layout=layout)
+
+plotly.offline.plot(figPD1, filename='puntosPD4.html')

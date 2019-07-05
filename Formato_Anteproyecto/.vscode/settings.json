@@ -1,3 +1,7 @@
 {
-  "spellright.language": ["es"],
+  "spellright.language": [
+    "es"
+  ],
+  "html.format.wrapLineLength": 80,
+  "editor.wordWrap": "wordWrapColumn",
 }

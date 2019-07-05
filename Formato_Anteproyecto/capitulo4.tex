@@ -16,7 +16,7 @@ A los 120 días de siembra se cosecharon los tubérculos y se contaron según su
 \noindent
 \textbf{Descripción de los datos.}\\
 
-Los datos se encuentran en un archivo CSV ordenados por columnas, la primera denominada planta que contiene el número que identifica cada planta, la segunda columna llamada densidad que posee valores de 1, 2 o 3, donde 1 implica una densidad de siembra de 30cm, 2 una densidad de 40cm y 3 una densidad de 50cm. Las siguientes cuatro columnas están identificadas como PD1, PD2, PD3 y PD4, cada columna posee valores continuos que representan el peso fresco de cada calibre en esa planta, los calibres son 4 y representan la categorización de los tubérculos según su diámetro, para el calibre 1 se toman tubérculos con diámetro menor o igual a 2cm, para el calibre 2 con diámetro mayor a 2cm y menor o igual a 4cm, en el calibre 3 mayores a 4cm y menores o igual a 6cm y finalmente el calibre 4 con tubérculos de diámetro mayor a 6cm. Las últimas dos columnas son X y Y, que indican mediante un valor entero la posición de dicha planta en la siembra. La cantidad total de plantas es 2839, para las densidades de siembra 1, 2 y 3 hay 1135, 926 y 778 plantas respectivamente, cada una con valores de PD1, PD2, PD3, PD4, X y Y.
+Los datos se encuentran separados según sus características en atributos, el primero denominado planta que contiene el número que identifica cada planta, el segundo llamada densidad que posee valores de 1, 2 o 3, donde 1 implica una densidad de siembra de 30cm, 2 una densidad de 40cm y 3 una densidad de 50cm. Los siguientes cuatro atributos están identificadas como PD1, PD2, PD3 y PD4, cada uno posee valores continuos que representan el peso fresco de cada calibre en esa planta, los calibres son 4 y representan la categorización de los tubérculos según su diámetro, para el calibre 1 se toman tubérculos con diámetro menor o igual a 2cm, para el calibre 2 con diámetro mayor a 2cm y menor o igual a 4cm, en el calibre 3 mayores a 4cm y menores o igual a 6cm y finalmente el calibre 4 con tubérculos de diámetro mayor a 6cm. Los últimos dos atributos son X y Y, que indican mediante un valor entero la posición de dicha planta en la siembra. La cantidad total de plantas es 2839, para las densidades de siembra 1, 2 y 3 hay 1135, 926 y 778 plantas respectivamente, cada una con valores de PD1, PD2, PD3, PD4, X y Y.
 
 A continuación se observan los datos descriptivos de cada variable
 
@@ -24,7 +24,7 @@ A continuación se observan los datos descriptivos de cada variable
 \begin{center}
 \begin{tabular}{|l|l|l|l|l|l|}
 \hline
-& Densidad & Peso Calibre 1 & Peso Calibre 2 & Peso Calibre 3 & Peso Calibre 4  \\
+& Densidad & PD1 & PD2 & PD3 & PD4  \\
 \hline \hline
 Conteo & 2839 & 2839 & 2839 & 2839 & 2839  \\ \hline
 Media & 1.8742 & 74.1536gr & 226.3262gr & 213.3114gr & 18.9698gr  \\ \hline
@@ -32,35 +32,116 @@ Mínimo & 1 & 0gr & 0gr & 0gr & 0gr  \\ \hline
 Máximo & 3 & 390.0000gr & 1080.0000gr & 1290.0000gr & 775.9459gr  \\ \hline
 Mediana & 2 & 62.0547gr &195.0000gr & 164.7058 & 0.0000gr \\ \hline
 Varianza & 0.6582 & 2892.7971 & 26386.3844 & 36986.5868 & 3486.4316 \\ \hline
-Moda & 0 & 0gr & 0gr & 0gr & 0gr  \\ \hline
+Moda & 1 & 0gr & 0gr & 0gr & 0gr  \\ \hline
 Distribución & N/A & normal & normal & normal & normal  \\ \hline
 \end{tabular}
 \caption{Datos Estadísticos Descriptivos.}
-\label{tabla:sencilla}
+\label{tabla:descriptivos}
 \end{center}
 \end{table}
+En el cuadro \ref{tabla:descriptivos} se observan los datos estadísticos descriptivos de la densidad, PD1, PD2, PD3 y PD4; en cuanto a la densidad se puede establecer que la clase con mayor número de repeticiones es la 1 que representa una densidad de siembra de 30cm, las varianzas de las variables PD1, PD2, PD3 y PD4 son altas, esto indica que la data es heterogénea y se evidencia la existencia de datos extremos, en las siguientes gráficas de dispersión es pueden notar mejor estas observaciones.\\
+
+\begin{figure}[h!]
+	\caption{Dispersión de la variable de pesos fresco del calibre 1 respecto a la densidad.}
+	\centering
+	\includegraphics[scale=0.5]{d-pd1.png}
+	\label{fig:dpd1}
+\end{figure}
+
+En la figura \ref{fig:dpd1} se pueden evidenciar algunos valores extremos que incluyen al valor máximo de dicha variable que es 390gr.
+
+\begin{figure}[h!]
+	\caption{Dispersión de la variable de pesos fresco del calibre 2 respecto a la densidad.}
+	\centering
+	\includegraphics[scale=0.5]{d-pd2.png}
+	\label{fig:dpd2}
+\end{figure}
+
+En la figura \ref{fig:dpd2} también se pueden encontrar algunos valores extremos incluyendo al valor tope de dicha variable que es 1080gr.
+
+\begin{figure}[h!]
+	\caption{Dispersión de la variable de pesos fresco del calibre 3 respecto a la densidad.}
+	\centering
+	\includegraphics[scale=0.5]{d-pd3.png}
+	\label{fig:dpd3}
+\end{figure}
+
+En la figura \ref{fig:dpd3} que gráfica PD3 cuyo valor máximo es 1290gr se observan varios valores extremos.
+
+\begin{figure}[h!]
+	\caption{Dispersión de la variable de pesos fresco del calibre 4 respecto a la densidad.}
+	\centering
+	\includegraphics[scale=0.5]{d-pd4.png}
+	\label{fig:dpd4}
+\end{figure}
+
+En la figura \ref{fig:dpd4} se encuentran datos con valores extremos que se encuentran muy cercanos al mínimo y máximo.
+
+Las figuras descritas anteriormente permiten determinar que se debe realizar limpieza de datos para evitar esos valores extremos o atípicos que afectan negativamente los cálculos durante la clasificación.\\
+
 
 \noindent
 \textbf{Exploración de datos.}\\
 
-La correlaciones de las variables PD1, PD2, PD3 y PD4 para cada densidad son las siguientes:
-\includegraphics[scale=0.5]{correlacionD1.jpg}
-\includegraphics[scale=0.5]{correlacionD2.jpg} \\
-\includegraphics[scale=0.5]{correlacionD3.jpg}
+Las correlaciones de las variables PD1, PD2, PD3 y PD4 para cada densidad demuestran la relación que existe entre dichas variables, en las siguientes figuras se pueden observar los valores calculados empleando el coeficiente de correlación de Spearman.\\
+
+En las figuras \ref{fig:cd1}, \ref{fig:cd2} y \ref{fig:cd3} se observan los valores de correlación entre las variables de peso para las densidades 1, 2 y 3, los valores oscilan entre 0 y 0.6 indicando que existe una correlación positiva entre los atributos PD1, PD2, PD3 y PD4.\\\\\\\\\\\\\\\\
+
+\begin{figure}[h!]
+	\caption{Matriz de correlaciones para la densidad 1.}
+	\centering
+	\includegraphics[scale=0.5]{correlacionD1.jpg}
+	\label{fig:cd1}
+\end{figure}
+
+\begin{figure}[h!]
+	\caption{Matriz de correlaciones para la densidad 2.}
+	\centering
+	\includegraphics[scale=0.5]{correlacionD2.jpg}
+	\label{fig:cd2}
+\end{figure}
+
+\begin{figure}[h!]
+	\caption{Matriz de correlaciones para la densidad 3.}
+	\centering
+	\includegraphics[scale=0.5]{correlacionD3.jpg}
+	\label{fig:cd3}
+\end{figure}
 
 Tomando en cuenta los estadísticos básicos de cada conjunto de datos se logra observar que los valores de varianza para las variables PD1, PD2, PD3 y PD4 son altos, esto podría afectar negativamente los cálculos del algoritmo de clasificación. A continuación se pueden observar los
-histogramas de las variables de entrada para cada densidad:
+histogramas de las variables de entrada para cada densidad que permiten apreciar el patrón que siguen los datos.\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
-\begin{center}
-\includegraphics[scale=0.6]{PD1.png} \\
-\includegraphics[scale=0.6]{PD2.png} \\
-\includegraphics[scale=0.6]{PD3.png} \\
-\includegraphics[scale=0.6]{PD4.png}
-\end{center}
+\begin{figure}[h!]
+	\caption{Dispersión de la variable de pesos fresco del calibre 4 respecto a la densidad.}
+	\centering
+	\includegraphics[scale=0.6]{PD1.png}
+	\label{fig:pd1}
+\end{figure}
 
-Los histogramas permiten observar que la distribución de los datos de entrada se asemeja a
-una curva normal, lo que ayuda a inferir que se debe emplear el método gaussiano de
-Bayes Naive para realizar su clasificación.\\\\
+\begin{figure}[h!]
+	\caption{Dispersión de la variable de pesos fresco del calibre 4 respecto a la densidad.}
+	\centering
+	\includegraphics[scale=0.6]{PD2.png}
+	\label{fig:pd2}
+\end{figure}
+
+\begin{figure}[h!]
+	\caption{Dispersión de la variable de pesos fresco del calibre 4 respecto a la densidad.}
+	\centering
+	\includegraphics[scale=0.6]{PD3.png}
+	\label{fig:pd3}
+\end{figure}
+
+\begin{figure}[h!]
+	\caption{Dispersión de la variable de pesos fresco del calibre 4 respecto a la densidad.}
+	\centering
+	\includegraphics[scale=0.6]{PD4.png}
+	\label{fig:pd4}
+\end{figure}
+
+En la figura \ref{fig:pd1} se encuentra el histograma de la variable PD1 para cada densidad, se puede ver el comportamiento de la variable demostrando diferentes patrones para cada densidad; en cuanto a la figura \ref{fig:pd2} se tiene a la variable PD2 que muestra patrones un poco mas similares para cada densidad, en la siguiente figura que es la \ref{fig:pd3} se evidencia la disminución de esta variable para la densidad 1 y finalmente en la figura \ref{fig:pd4} se hace evidente que la variable PD4 tiene valores menores respecto a las anteriores.\\
+
+Los histogramas permiten determinar que la distribución de los datos de entrada se asemeja a una curva normal, lo que ayuda a inferir que se debe emplear el método gaussiano de Bayes Naive para realizar su clasificación.\\\\
 
 \noindent
 \textbf{Verificación de la calidad de los datos.}\\
@@ -197,11 +278,15 @@ Cada vez que se ejecuta el algoritmo el mismo indica que obtuvo un porcentaje de
 y prueba varían por lo tanto estos valores pueden cambiar ligeramente. En cuanto a la curva característica
 operativa del receptor se obtiene:
 
-\begin{center}
-	\includegraphics[scale=0.6]{roc.png}
-\end{center}
 
-Cuyos trazos indican que no es una mala clasificación pero tampoco es una clasificación
+\begin{figure}[h!]
+	\caption{Matriz de correlaciones para la densidad 3.}
+	\centering
+	\includegraphics[scale=0.55]{roc.png}
+	\label{fig:roc}
+\end{figure}
+
+La curva ROC en la figura \ref{fig:roc} posee trazos que indican que no es una mala clasificación pero tampoco es una clasificación
 óptima, si se observan los valores para el área bajo la curva de la densidad 1, 2 y 3
 se obtuvieron 0.68, 0.56 y 0.61 respectivamente que según el estándar indicado anteriormente
 están entre una precisión regular y no tener precisión diagnóstica.\\

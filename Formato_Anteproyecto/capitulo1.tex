@@ -2,53 +2,126 @@
 
 \section{Planteamiento y formulaci\'on del problema}
 
-Los algoritmos, la estadística, la ingeniería, la optimización y diversas ramas de la ciencia computacional son parte de las herramientas que ayudan a describir un aspecto del mundo real a través de un conjunto de datos,  que en muchos casos está conformado por las muestras que son representaciones de objetos reales y las características que son la descripción de dichos objetos. (Layton, 2015)\\
+Los algoritmos, la estadística, la ingeniería, la optimización y diversas ramas de la
+ciencia computacional son parte de las herramientas que ayudan a describir un aspecto
+del mundo real a través de un conjunto de datos,  que en muchos casos está conformado
+por las muestras que son representaciones de objetos reales y las características que
+son la descripción de dichos objetos. (Layton, 2015)\\
 
-Según VanderPlas (2017) para realizar clasificación se pueden implementar los modelos \textit{Bayes Naive} que son un grupo de algoritmos simples y rápidos mayormente acertados para conjuntos de datos grandes, estos clasificadores están construidos sobre la base de los métodos de clasificación Bayesiana que se apoyan en el teorema de Bayes que describe la relación de las probabilidades condicionales de las cantidades estadísticas. En la clasificación Bayesiana el interés es encontrar la probabilidad de una clase L de acuerdo a las características observadas, que se puede escribir como $P\left(L|caracteristicas\right)$ y el teorema de Bayes indica como expresar esto en términos de cantidades que pueden ser computarizadas más fácilmente:
+Según VanderPlas (2017) para realizar clasificación se pueden implementar los modelos
+\textit{Bayes Naive} que son un grupo de algoritmos simples y rápidos mayormente
+acertados para conjuntos de datos grandes, estos clasificadores están construidos sobre
+la base de los métodos de clasificación Bayesiana que se apoyan en el teorema de Bayes
+que describe la relación de las probabilidades condicionales de las cantidades estadísticas.
+En la clasificación Bayesiana el interés es encontrar la probabilidad de una clase L de
+acuerdo a las características observadas, que se puede escribir como
+$P\left(L|caracteristicas\right)$ y el teorema de Bayes indica como expresar esto en
+términos de cantidades que pueden ser computarizadas más fácilmente:
 
 \[P\left(L|caracteristicas\right)=\frac{P\left(caracteristicas|L\right)P\left(L\right)}{P\left(caracteristicas\right)}\]
 
-Si se intenta decidir entre dos clases ($L_{1}$ y $L_{2}$) la manera de tomar la decisión es calcularr el radio de la probabilidad posterior para cada clase:
+Si se intenta decidir entre dos clases ($L_{1}$ y $L_{2}$) la manera de tomar la decisión
+es calcular el radio de la probabilidad posterior para cada clase:
 
 \[\frac{P\left(L_{1}|caracteristicas\right)}{P\left(L_{1}|caracteristicas\right)}=\frac{P\left(caracteristicas|L_{1}\right)P\left(L_{1}\right)}{P\left(caracteristicas|L_{2}\right)P\left(L_{2}\right)}\]\\
 
-El algoritmo basado en estas ecuaciones debe seguir los siguientes pasos según Layton (2015):
+El algoritmo basado en estas ecuaciones debe seguir los siguientes pasos según Layton
+(2015):
 
 \begin{itemize}
-	\item Teniendo el conjunto de datos de entrenamiento se debe calcular los valores de la probabilidad de una característica para cada clase.
+	\item Teniendo el conjunto de datos de entrenamiento se debe calcular los valores
+	de la probabilidad de una característica para cada clase.
 	\item Se computa la probabilidad de que un dato de muestra pertenezca a una clase.
 	\item Se computa la probabilidad de que un dato pertenezca a una clase.
 	\item Se ingresan valores de prueba al modelo y se prueba la clasificación.
 \end{itemize}
 
-En investigaciones anteriores como la de Misigo y Miriti (2016) en la cual se clasificaron manzanas según su variedad, queda en evidencia que el uso de clasificadores \textit{Bayes Naive} posee un porcentaje de exactitud mayor sobre componentes de análisis comparadas con técnicas como la  lógica difusa y la red neuronal artificial perceptrón multicapa, por lo tanto la propuesta de esta investigación fue implementar un clasificador de \textit{Bayes Naive} para entrenar un modelo que teniendo como características o entradas los pesos frescos de cada calibre de papa (el calibre es una categorización de las papas según su tamaño)bajo la hipótesis de que lo lograra hacer con un alto nivel de aciertos en cuanto a  la densidad de siembra en la que fueron plantadas las plantas de papa criolla. Eel desarrollo de este clasificador fué en Python que según la fundación de Python (2018) es un lenguaje de programación creado en 1990 por Guido Van Rossum que se caracteriza por ser sencillo de aprender, tener estructuras de data de alto nivel que son eficientes y un simple pero efectivo acercamiento con la programación orientada a objetos. Este lenguaje actualmente es muy usado en el mundo de la ciencia porque provee herramientas que facilitan a las personas enfocarse más en el problema que buscan resolver y no en como programarlo, un ejemplo de esto son los paquetes NumPy (Python Númerico) y SciPy (Python Científico) (Challenger-Pérez \textit{et al}, 2014).\\
+En investigaciones anteriores a la presente como la de Misigo y Miriti (2016) en la cual se clasificaron
+manzanas según su variedad, queda en evidencia que el uso de clasificadores
+\textit{Bayes Naive} posee un porcentaje de exactitud mayor sobre componentes de análisis
+comparadas con técnicas como la lógica difusa y la red neuronal artificial perceptrón
+multicapa, por lo tanto la propuesta de esta investigación fue implementar un clasificador
+de \textit{Bayes Naive} para entrenar un modelo que teniendo como características o
+entradas los pesos frescos de cada calibre de papa (el calibre es una categorización
+de las papas según su tamaño) bajo la hipótesis de que lo lograra hacer con un alto nivel
+de aciertos en cuanto a la densidad de siembra en la que fueron plantadas las plantas
+de papa criolla. El desarrollo de este clasificador fue en Python que según la fundación
+de Python (2018) es un lenguaje de programación creado en 1990 por Guido Van Rossum que
+se caracteriza por ser sencillo de aprender, tener estructuras de data de alto nivel que
+son eficientes y un simple pero efectivo acercamiento con la programación orientada a
+objetos. Este lenguaje actualmente es muy usado en el mundo de la ciencia porque provee
+herramientas que facilitan a las personas enfocarse más en el problema que buscan
+resolver y no en como programarlo, un ejemplo de esto son los paquetes NumPy (Python
+Númerico) y SciPy (Python Científico) (Challenger-Pérez \textit{et al}, 2014).\\
 
-La clasificación de las papas usualmente se realiza de manera manual, existen algunos modelos de clasificación generados por métodos estadísticos no espaciales que incurren en la violación de sus supuestos para obtener un resultado y por lo tanto su uso es poco. Al implementar un clasificador Bayes Naive estos supuestos desaparecen y se puede realizar una clasificación acertada que pueda ser considerada como un reemplazo a la clasificación manual. Según la "`Norma NTC 341. Industria Alimentaria - Papa para Consumo"' la clasificación de tubérculos según su diámetro se realiza bajo las clases denominadas muy grande (mayores a 90mm), grande (65-90mm), mediana (45-64mm) y pequeña (30-44mm). Por otra parte la clasificación comercial en Colombia se realiza según grados (calibres), donde el grado 0 corresponde a tubérculos con un diámetro mayor a 90mm, el grado 1 a diámetros entre 70 y 89mm, el grado 2 entre 50 y 69mm y el grado 3 entre 35 y 49mm (Buitrago et al, 2003). Sin embargo, los datos para esta investigación siguen la clasificación de Bernal (2017) quien clasificó los tubérculos según su diámetro en las categorías menores a 2cm, (2-4] cm, (4-6] cm y mayores de 6 cm, estas categorías son denominadas calibres.\\
+La clasificación de las papas usualmente se realiza de manera manual, existen algunos
+modelos de clasificación generados por métodos estadísticos no espaciales que incurren
+en la violación de sus supuestos para obtener un resultado y por lo tanto su uso es poco.
+Al implementar un clasificador Bayes Naive estos supuestos desaparecen y se puede
+realizar una clasificación acertada que pueda ser considerada como un reemplazo a la
+clasificación manual. Según la "`Norma NTC 341. Industria Alimentaria - Papa para
+Consumo"' la clasificación de tubérculos según su diámetro se realiza bajo las clases
+denominadas muy grande (mayores a 90mm), grande (65-90mm), mediana (45-64mm) y pequeña
+(30-44mm). Por otra parte la clasificación comercial en Colombia se realiza según grados
+(calibres), donde el grado 0 corresponde a tubérculos con un diámetro mayor a 90mm, el
+grado 1 a diámetros entre 70 y 89mm, el grado 2 entre 50 y 69mm y el grado 3 entre 35 y
+49mm (Buitrago et al, 2003). Sin embargo, los datos para esta investigación siguen la
+clasificación de Bernal (2017) quien clasificó los tubérculos según su diámetro en las
+categorías menores a 2cm, (2-4]cm, (4-6]cm y mayores de 6cm, estas categorías son
+denominadas calibres.\\
 
-Los datos empleados  para la construcción, validación y prueba del clasificador serán los datos observados en el Centro agropecuario Marengo de la Universidad Nacional de Colombia, en el departamento de Cundinamarca y datos que serán generados empleando regresión espacial, para así observar las variaciones que pueden provocar en el modelo los datos reales y los generados artificialmente. El método de regresión espacial es un modelo estadístico para data observada en unidades geográficas como países o regiones, donde juegan un papel importante los vecinos, como indica Arbia (2014), este autor expresa que para tratar información espacial es necesario tener dos sets de información, el primero que posee los valores observados de las variables y el segundo que posee la ubicación particular donde esos valores fueron observados y las relaciones de proximidad entre todas las observaciones espaciales.\\
+Los datos que fueron empleados para la construcción, validación y prueba del clasificador
+fueron los datos observados en el Centro agropecuario Marengo de la Universidad Nacional de
+Colombia, en el departamento de Cundinamarca.\\
 
-Para realizar la comparación de los resultados obtenidos para cada conjunto de de datos se usa la curva ROC, que como explica Gönen (2017) la curva ROC (\textit{Receiver Operating Characteristic Curve}) es una herramienta estadística para evaluar la precisión de predicciones independientemente de la fuente de las mismas.
+Para realizar la evaluación de los resultados obtenidos para el conjunto de datos
+se empleó la curva ROC, que como explica Gönen (2017) la curva ROC (\textit{Receiver
+Operating Characteristic Curve}) es una herramienta estadística para evaluar la precisión
+de predicciones independientemente de la fuente de las mismas.
 
 \section{Objetivos}
 
 \subsection{Objetivo general}
 
-Diseñar un clasificador de tubérculos de papa criolla para diferentes densidades de siembra según el peso fresco por calibre empleando \textit{Bayes Naive}.
+Diseñar un clasificador de tubérculos de papa criolla para diferentes densidades de
+siembra según el peso fresco por calibre empleando \textit{Bayes Naive}.
 
 \subsection{Objetivos espec\'ificos}
 
 \begin{itemize}
 \item  Diagnosticar el formato de las variables de entrada y salida para el clasificador.
-\item	 Establecer el tipo de algoritmo \textit{Bayes Naive} a emplear  y las características para el entrenamiento.
+\item	 Establecer el tipo de algoritmo \textit{Bayes Naive} a emplear y las
+características para el entrenamiento.
 \item  Implementar el algoritmo de clasificación basado en \textit{Bayes Naive}.
 \item  Realizar las pruebas de funcionamiento y la comparación estadística.
 \end{itemize}
 
-\section{Justificaci\'on e importancia}
+\section{Aportes de la investigación}
 
-Para la industria colombiana la papa criolla constituye un rubro muy importante, es un producto versátil que como lo indica Piñeros (2009) permite mediante varios procesos la obtención de papa criolla precocida y congelada, francesa precocida prefrita congelada y preformados, entre otros, para la realización de cada uno de estos productos es necesario emplear papas cuyas características se adecuen a lo que busca la industria, una característica resaltante al momento de clasificar papas es su peso. Cuando una industria cosecha papas controla que el resultado sean papas que se adecuen al tipo de producto que luego van a generar, para ello usan diferentes métodos que les permiten controlar las características incurriendo en los menores gastos posibles.\\
+Para la industria colombiana la papa criolla constituye un rubro muy importante, es un
+producto versátil que como lo indica Piñeros (2009) permite mediante varios procesos la
+obtención de papa criolla precocida y congelada, francesa precocida prefrita congelada
+y preformados, entre otros, para la realización de cada uno de estos productos es
+necesario emplear papas cuyas características se adecuen a lo que busca la industria,
+una característica resaltante al momento de clasificar papas es su peso. Cuando una
+industria cosecha papas controla que el resultado sean papas que se adecuen al tipo de
+producto que luego van a generar, para ello usan diferentes métodos que les permiten
+controlar las características incurriendo en los menores gastos posibles.\\
 
-Para realizar clasificaciones de papa criolla que se basen en la relación que hay entre la densidad de siembra y los pesos frescos de los calibres de papa no existe un método o sistema que realice una clasificación asertiva, incluso, no existen muchos métodos que empleen algoritmos que sean capaces de realizar la identificación con gran precisión empleando estadística, por eso se propone realizar el clasificador empleando \textit{Bayes Naive} y Python, \textit{Bayes Naive} por ser un algoritmo de fácil implementación que ha demostrado en investigaciones pasadas tener un alto nivel de aciertos y no depende del supuesto de independencia, y se plantea emplear Python como lenguaje de programación por ser un lenguaje que posee una sintaxis simple, un alto nivel de efectividad y librerías dedicadas al desarrollo científico, lo que permite que el algoritmo que se diseñe sea de fácil uso para personas del campo agronómico, es decir, sería una herramienta base para investigadores que luego quieran emplear sus propios clasificadores pero no tengan un alto nivel de instrucción en la parte informática.
+Para realizar clasificaciones de papa criolla que se basen en la relación que hay entre
+la densidad de siembra y los pesos frescos de los calibres de papa no existe un método
+o sistema que realice dicha clasificación de manera asertiva, incluso, no existen muchos
+métodos que empleen algoritmos que sean capaces de realizar la identificación con gran precisión
+empleando estadística, por eso se planteó realizar el clasificador empleando
+\textit{Bayes Naive} y Python, \textit{Bayes Naive} por ser un algoritmo de fácil
+implementación que ha demostrado en investigaciones pasadas tener un alto nivel de
+aciertos y no depende del supuesto de independencia, y se empleó Python como
+lenguaje de programación por ser un lenguaje que posee una sintaxis simple, un alto
+nivel de efectividad y librerías dedicadas al desarrollo científico, lo que permitió
+que el algoritmo que se diseñó sea de fácil uso para personas del campo agronómico, es
+decir, es una herramienta base para investigadores que quieran emplear sus
+propios clasificadores y evaluarlos con curvas ROC pero no tengan un alto nivel de instrucción
+en la parte informática.
 
-\section{Aportes de esta investigación}
+
 
