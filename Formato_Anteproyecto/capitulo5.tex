@@ -1,28 +1,16 @@
 \chapter{Conclusiones y recomendaciones}
 
-Se diseñó la solución algorítmica para el cálculo de la clasificación y predicción de la densidad
-de siembra de tubérculos de papa criolla a partir de sus pesos frescos por calibre empleando
-un clasificador Bayes Naive Gaussiano, se observó que dicho clasificador no genera predicciones
-óptimas para el set de datos empleado que corresponde a una cosecha realizada en el Centro
-agropecuario Merengo de la Universidad Nacional de Colombia; la naturaleza de los datos afecta
-la clasificación empleada, la mayor sospecha es la metodología empírica empleada en la
-clasificación de los tubérculos por calibre, es posible que las marcas de clase no sean las
-ideales para obtener datos que puedan ser discriminantes a la hora de realizar la clasificación.\\
+Se diagnosticó el formato de las variables de entrada y salida para el clasificador, determinando que las entradas deben ser la densidad y las variables PD1, PD2, PD3 y PD4, en cuanto a los datos se demostró que no afectan a la clasificación los valores extremos.\\
 
-Dentro del algoritmo se codificaron 6 funciones que se encargan de realizar los cálculos de media,
-varianza, probabilidades y evaluación de la clasificación, con el fin de que las mismas se adapten
-para distintas clasificaciones sin ser restringidos por el tamaño de los datos, la cantidad de
-entradas o la cantidad de clases realizando pocos ajustes.\\
+Con el estudio de las características del conjunto de datos se logró determinar que su distribución se asemeja a la normal por lo tanto se definió que se debía emplear un clasificador gaussiano para que el mismo se ajustara a las necesidades del problema planteado.\\
 
-Para la evaluación de la clasificación se empleó la curva característica operativa del receptor
-que es un método empleado ampliamente para la evaluación de modelos; el área bajo la curva ROC
-indica que los resultados del clasificador van desde no tener precisión diagnóstica a tener una
-precisión regular.\\
+Se diseñó e implementó la solución algorítmica para el cálculo de la clasificación y predicción de la densidad de siembra de tubérculos de papa criolla a partir de sus pesos frescos por calibre empleando un clasificador Bayes Naive Gaussiano, se observó que dicho clasificador no genera predicciones
+óptimas para el set de datos empleado que corresponde a una cosecha realizada en el Centro agropecuario Merengo de la Universidad Nacional de Colombia; la naturaleza de los datos afecta la clasificación empleada, la mayor sospecha es la metodología empírica empleada en la clasificación de los tubérculos por calibre, es posible que las marcas de clase no sean las ideales para obtener datos que puedan ser discriminantes a la hora de realizar la clasificación.\\
 
-Para futuras pruebas de clasificación sobre el mismo set de datos se recomienda probar diferentes
-métodos y modelos de clasificación que por tener diferentes supuestos podrían llegar a resultados
-con mayor precisión, además realizar pruebas eliminando los valores iguales a 0 dentro del set de datos. En cuanto al algoritmo de clasificación, para realizar más pruebas del mismo se podrían emplear
-distintos sets de datos con características estadísticas diferentes para determinar cuales son
-sus capacidades. Todas estás recomendaciones son procedimientos que se encontraban fuera del alcance
-previamente definido para este proyecto de investigación.\\
+Dentro del algoritmo se codificaron 6 funciones que se encargan de realizar los cálculos de media, varianza, probabilidades y evaluación de la clasificación, con el fin de que las mismas se adapten para distintas clasificaciones sin ser restringidos por el tamaño de los datos, la cantidad de entradas o la cantidad de clases realizando pocos ajustes.\\
+
+Para las pruebas de funcionamiento y la comparación estadística se empleó la curva característica operativa del receptor que es un método empleado ampliamente para la evaluación de modelos; el área bajo la curva ROC
+indica que los resultados del clasificador van desde no tener precisión diagnóstica a tener una precisión regular.\\
+
+Para futuras pruebas de clasificación sobre el mismo set de datos se recomienda probar diferentes métodos y modelos de clasificación que por tener diferentes supuestos podrían llegar a resultados con mayor precisión, además realizar pruebas eliminando los valores iguales a 0 dentro del conjunto de datos. En cuanto al algoritmo de clasificación, para realizar más pruebas del mismo se podrían emplear distintos conjuntos de datos con características estadísticas diferentes para determinar cuales son sus capacidades. Todas estás recomendaciones son procedimientos que se encontraban fuera del alcance previamente definido para este proyecto de investigación.\\
 

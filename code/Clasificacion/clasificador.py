@@ -150,13 +150,13 @@ def prob_condicional(set_test, cant_clases, pcc, prob_previa, clases_set_test):
 
 # Curvas ROC
 def curvas_roc(clases_set_test, prediccion, cant_clases, prob_cond):
-    # https://stackoverflow.com/questions/50941223/plotting-roc-curve-with-multiple-classes
-    # http://benalexkeen.com/scoring-classifier-models-using-scikit-learn/
-    matrix_confusion = confusion_matrix(clases_set_test, prediccion)
-    print('\n---------------------------------------------------------------------------------------------------\n'
-          'Matriz de confusión'
-          '\n---------------------------------\n',
-          matrix_confusion)
+    print(clases_set_test, prediccion)
+
+    #matrix_confusion = confusion_matrix(clases_set_test, prediccion)
+    # print('\n---------------------------------------------------------------------------------------------------\n'
+    #       'Matriz de confusión'
+    #       '\n---------------------------------\n',
+    #       matrix_confusion)
     # plt.style.use('ggplot')
     # Compute ROC curve and ROC AUC for each class
 
@@ -208,7 +208,7 @@ def bayes_naive_gaussiano(set_entrenamiento, set_test, clases_set_test):
 
 # LECTURA DEL ARCHIVO Y CREACION DE SETS DE ENTRENAMIENTO Y TEST
 # Leyendo la data de un archivo .csv
-data = pd.read_csv('./datag.csv', delimiter=',')
+data = pd.read_csv('./dataLimpia.csv', delimiter=',')
 
 # pasando la data de pandas dataframe a numpy ndarray
 data = np.array(data.iloc[:])

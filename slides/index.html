@@ -1,0 +1,274 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Bayes Naive Gaussiano</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/theme/night.css">
+		<link rel="stylesheet" href="css/style.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides"  id="fragments">
+				<section class="presentation">
+					<img src="img/logo_unet.png" alt="" />
+					<p>
+						Universidad Nacional Experimental del Táchira -
+						Vicerrectorado Académico -
+						Decanato de Docencia -
+						Departamento de Ingeniería en Informática -
+						Trabajo de Aplicación Profesional -
+						Proyecto Especial de Grado
+					</p>
+					<h4>
+						Diseño de una clasificador de tubérculos de papa criolla para diferentes densidades de siembra según el peso fresco por calibre empleando Bayes Naive.
+					</h4>
+					<p class="text-right">
+						Autor: Estefany Salas. - estefany.salas@unet.edu.ve
+					</p>
+					<p class="text-right">
+						Tutor: Rossana Timaure - rttg@unet.edu.ve
+					</p>
+					<p>
+						Julio, 2019.
+					</p>
+				</section>
+				<section>
+					<section>
+						<h1>Preliminares</h1>
+					</section>
+					<section>
+						<h2>Planteamiento y formulación del problema</h2>
+						<ul>
+							<li>
+								<h4 class="fragment">Papa criolla (Solanum phureja).</h4>
+								<ol>
+									<li class="fragment">Intereses comerciales.</li>
+									<li class="fragment">Manipulación de variables, pero la densidad de siembra es espacial.</li>
+								</ol>
+							</li>
+							<li class="fragment"><h4>Redes neuronales artificiales y probabilísticas.</h4></li>
+							<li class="fragment"><h4>Lenguaje de programación estadístico R.</h4></li>
+						</ul>
+					</section>
+					<section>
+						<h2 class="text-left">Objetivo General</h2>
+						<p class="text-left">
+							Desarrollar un paquete en lenguaje R que permita la clasificación de tubérculos de papa
+							criolla (Solanum phureja) para diferentes densidades de siembra empleando redes neuronales
+							probabilı́sticas.
+						</p>
+					</section>
+					<section>
+						<h2 class="text-left">Objetivos Específicos</h2>
+						<ul>
+							<li class="fragment">
+								<p>
+									Estudiar la parametrización de la densidad de siembra como parámetro de entrada al
+									clasificador.
+								</p>
+							</li>
+							<li class="fragment">
+								<p>
+									Diseñar los algoritmos para las funciones principales que permitan el entrenamiento de una
+									red neuronal probabilı́stica para la clasificación de tubérculos de papa criolla (Solanum
+									phureja) para diferentes densidades de siembra.
+								</p>
+							</li>
+							<li class="fragment">
+								<p>
+									Implementar las funciones para la clasificación de tubérculos de papa criolla para diferentes
+									densidades de siembra, basadas en los algorı́tmos desarrollados.
+								</p>
+							</li>
+							<li class="fragment">
+								<p>
+									Realizar la pruebas del paquete desarrollado bajo diferente escenarios.
+								</p>
+							</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Aportes de la investigación</h2>
+						<ul>
+							<li class="fragment">
+								<h4>
+									Sistema de producción poco eficiente.
+								</h4>
+							</li>
+							<li class="fragment">
+								<h4>
+									Los altos de precios de insumos agrícolas.
+								</h4>
+							</li>
+							<li class="fragment">
+								<h4>
+									Estudios lineales cuando la densidad de siembra es una variable de tipo espacial.
+								</h4>
+							</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h1>Fundamentos Teóricos</h1>
+					</section>
+					<section>
+						<h2>Antecedentes</h2>
+						<ul>
+							<li class="fragment">
+								<h4>
+									Cálculo de la tasa de germinación utilizando un clasificador basado en redes neuronales a partir de imágenes de plántulas previamente segmentadas.
+								</h4>
+							</li>
+							<li class="fragment">
+								<h4>Un algoritmo de reconocimiento de hojas para la clasificación de plantas utilizando una red neuronal probabilística.</h4>
+							</li>
+							<li class="fragment">
+								<h4>Modelado del Calibre de tubérculos de papa Solanum phureja bajo diferentes densidades de siembra mediante regresión binomial negativa cero-inflada.</h4>
+							</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Bases Teóricas</h2>
+						<ul>
+							<li class="fragment">Papa criolla (Solanum Phureja)</li>
+							<li class="fragment">Redes neuronales artificiales.</li>
+							<li class="fragment">Redes neuronales probabilı́sticas.</li>
+							<li class="fragment">Curvas ROC.</li>
+							<li class="fragment">Lenguaje R.</li>
+							<li class="fragment">Estructura de paquetes en R/RStudio.</li>
+							<li class="fragment">RStudio.</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h1>Fundamentos Metodológicos</h1>
+					</section>
+					<section>
+						<h2>Enfoque de la investigación.</h2>
+						<h3>--- Proyectivo ---</h3>
+					</section>
+					<section>
+						<h2>Diseño de la investigación.</h2>
+						<h3>--- Secuencial algorítmico ---</h3>
+					</section>
+					<section>
+						<h2>Fases metodológicas.</h2>
+						<ul>
+							<li>
+								<h3 class="fragment">Desarrollo del paquete en R.</h3>
+								<ol>
+									<l1 class="fragment">Creación del esqueleto del paquete</l1>
+									<l1 class="fragment"> - Diseño de las soluciones algorı́tmicas</l1>
+									<l1 class="fragment"> - Codificación de los algoritmos</l1>
+									<l1 class="fragment"> - Registrar el método para el envı́o y uso de funciones</l1>
+									<l1 class="fragment"> - Diseñar y entrenar la red neuronal probabilı́stica</l1>
+									<l1 class="fragment"> - Pruebas unitarias de las funciones</l1>
+									<l1 class="fragment"> - Implementar y realizar pruebas de clasificación</l1>
+									<l1 class="fragment"> - Chequear la carga del paquete</l1>
+									<l1 class="fragment"> - Construcción del método de distribución del paquete</l1>
+								</ol>
+							</li>
+							<li class="fragment">
+								<h3>Comparación de resultados.</h3>
+							</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h1>Desarrollo</h1>
+					</section>
+					<section>
+						<h2>
+							Creación del esqueleto del paquete.
+						</h2>
+					</section>
+					<section>
+						<h2>
+							Diseño de las soluciones algorı́tmicas.
+						</h2>
+						<ul>
+							<li class="fragment">
+								Diseño de las soluciones algorı́tmicas para el entrenamiento de una red
+								neuronal probabilı́stica que permita la clasificación de tubérculos de papa.
+							</li>
+							<li class="fragment">
+								Diseño del algoritmo de la función de entrenamiento y clasificación de la red
+								(trainNeuralNet).
+							</li>
+							<li class="fragment">
+								Diseño del algoritmo de la función de evaluación de la red neuronal
+								probabilı́stica y su clasificación (evaluate).
+							</li>
+							<li class="fragment">
+								Diseño del algoritmo de la función de estandarización de datos (standardize).
+							</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Codificación de los algoritmos.</h2>
+						<ul>
+							<li class="fragment">Función de entrenamiento y clasificación de la red (trainNeuralNet).</li>
+							<li class="fragment">Función de evaluación de la red (evaluate).</li>
+							<li class="fragment">Función de estandarización de datos (standardize).</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Chequeo del paquete, método de distribución y registro del método de envı́o.</h2>
+					</section>
+					<section>
+						<h2>Pruebas funcionales del paquete.</h2>
+						<ul>
+							<li class="fragment">Algoritmo de clasificación.</li>
+							<li class="fragment">Gráfico de nubes de puntos.</li>
+							<li class="fragment">Curvas características operativas del receptor.</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<h2>Conclusiones y Recomendaciones</h2>
+				</section>
+				<section>
+					<h1>Gracias.</h1>
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>

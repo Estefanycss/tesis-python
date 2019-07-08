@@ -317,6 +317,16 @@ INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 OUTPUT /Users/estefany/workspace/tesis-python/Formato_Anteproyecto/Capitulo2.aux
 INPUT /Users/estefany/workspace/tesis-python/Formato_Anteproyecto/Capitulo2.tex
 INPUT /Users/estefany/workspace/tesis-python/Formato_Anteproyecto/Capitulo2.tex
+INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmbxti10.tfm
+INPUT /Users/estefany/workspace/tesis-python/Formato_Anteproyecto/planta.jpeg
+INPUT /Users/estefany/workspace/tesis-python/Formato_Anteproyecto/planta.jpeg
+INPUT /Users/estefany/workspace/tesis-python/Formato_Anteproyecto/planta.jpeg
+INPUT /Users/estefany/workspace/tesis-python/Formato_Anteproyecto/papas.png
+INPUT /Users/estefany/workspace/tesis-python/Formato_Anteproyecto/papas.png
+INPUT /Users/estefany/workspace/tesis-python/Formato_Anteproyecto/papas.png
+INPUT /Users/estefany/workspace/tesis-python/Formato_Anteproyecto/surcos.jpeg
+INPUT /Users/estefany/workspace/tesis-python/Formato_Anteproyecto/surcos.jpeg
+INPUT /Users/estefany/workspace/tesis-python/Formato_Anteproyecto/surcos.jpeg
 OUTPUT /Users/estefany/workspace/tesis-python/Formato_Anteproyecto/Capitulo31.aux
 INPUT /Users/estefany/workspace/tesis-python/Formato_Anteproyecto/Capitulo31.tex
 INPUT /Users/estefany/workspace/tesis-python/Formato_Anteproyecto/Capitulo31.tex
@@ -389,6 +399,7 @@ INPUT /Users/estefany/workspace/tesis-python/Formato_Anteproyecto/BLI.aux
 INPUT /Users/estefany/workspace/tesis-python/Formato_Anteproyecto/Anteproyecto.out
 INPUT /Users/estefany/workspace/tesis-python/Formato_Anteproyecto/Anteproyecto.out
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
+INPUT /usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb

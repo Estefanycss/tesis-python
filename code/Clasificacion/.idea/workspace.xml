@@ -5,20 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1d1fa181-c472-47b8-b4d1-44206bd8a2b2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../Formato_Anteproyecto/.vscode/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../Formato_Anteproyecto/.vscode/settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Formato_Anteproyecto/Anteproyecto.fdb_latexmk" beforeDir="false" afterPath="$PROJECT_DIR$/../../Formato_Anteproyecto/Anteproyecto.fdb_latexmk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Formato_Anteproyecto/Anteproyecto.fls" beforeDir="false" afterPath="$PROJECT_DIR$/../../Formato_Anteproyecto/Anteproyecto.fls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Formato_Anteproyecto/Anteproyecto.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../Formato_Anteproyecto/Anteproyecto.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Formato_Anteproyecto/Anteproyecto.out" beforeDir="false" afterPath="$PROJECT_DIR$/../../Formato_Anteproyecto/Anteproyecto.out" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Formato_Anteproyecto/Anteproyecto.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/../../Formato_Anteproyecto/Anteproyecto.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Formato_Anteproyecto/Anteproyecto.synctex.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../../Formato_Anteproyecto/Anteproyecto.synctex.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Formato_Anteproyecto/capitulo1.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../Formato_Anteproyecto/capitulo1.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Formato_Anteproyecto/Anteproyecto.toc" beforeDir="false" afterPath="$PROJECT_DIR$/../../Formato_Anteproyecto/Anteproyecto.toc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Formato_Anteproyecto/BLI.aux" beforeDir="false" afterPath="$PROJECT_DIR$/../../Formato_Anteproyecto/BLI.aux" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Formato_Anteproyecto/Capitulo2.aux" beforeDir="false" afterPath="$PROJECT_DIR$/../../Formato_Anteproyecto/Capitulo2.aux" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Formato_Anteproyecto/Capitulo31.aux" beforeDir="false" afterPath="$PROJECT_DIR$/../../Formato_Anteproyecto/Capitulo31.aux" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Formato_Anteproyecto/Capitulo4.aux" beforeDir="false" afterPath="$PROJECT_DIR$/../../Formato_Anteproyecto/Capitulo4.aux" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Formato_Anteproyecto/Capitulo5.aux" beforeDir="false" afterPath="$PROJECT_DIR$/../../Formato_Anteproyecto/Capitulo5.aux" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Formato_Anteproyecto/capitulo2.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../Formato_Anteproyecto/capitulo2.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Formato_Anteproyecto/capitulo31.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../Formato_Anteproyecto/capitulo31.tex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Formato_Anteproyecto/capitulo4.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../Formato_Anteproyecto/capitulo4.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Formato_Anteproyecto/capitulo5.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../Formato_Anteproyecto/capitulo5.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Formato_Anteproyecto/intro.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../Formato_Anteproyecto/intro.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/descriptiva.py" beforeDir="false" afterPath="$PROJECT_DIR$/descriptiva.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clasificador.py" beforeDir="false" afterPath="$PROJECT_DIR$/clasificador.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pesos1.html" beforeDir="false" afterPath="$PROJECT_DIR$/pesos1.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pesos2.html" beforeDir="false" afterPath="$PROJECT_DIR$/pesos2.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pesos3.html" beforeDir="false" afterPath="$PROJECT_DIR$/pesos3.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pesos4.html" beforeDir="false" afterPath="$PROJECT_DIR$/pesos4.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/puntosPD1.html" beforeDir="false" afterPath="$PROJECT_DIR$/puntosPD1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/puntosPD2.html" beforeDir="false" afterPath="$PROJECT_DIR$/puntosPD2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/puntosPD3.html" beforeDir="false" afterPath="$PROJECT_DIR$/puntosPD3.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/puntosPD4.html" beforeDir="false" afterPath="$PROJECT_DIR$/puntosPD4.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -74,24 +84,24 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="csv" value="30" />
-          <entry key="py" value="8011" />
+          <entry key="py" value="8027" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="30" />
-          <entry key="Python" value="8011" />
+          <entry key="Python" value="8027" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="csv" value="4" />
+          <entry key="csv" value="5" />
           <entry key="py" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="PLAIN_TEXT" value="4" />
+          <entry key="PLAIN_TEXT" value="5" />
           <entry key="Python" value="9" />
         </counts>
       </usages-collector>
@@ -99,16 +109,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/clasificador.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="254">
-              <caret line="30" column="40" selection-start-line="30" selection-start-column="40" selection-end-line="30" selection-end-column="40" />
+            <state relative-caret-position="224">
+              <caret line="158" column="29" lean-forward="true" selection-start-line="158" selection-start-column="29" selection-end-line="158" selection-end-column="29" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
-                <marker date="1562020632097" expanded="true" signature="5233:6637" ph="..." />
-                <marker date="1562020632097" expanded="true" signature="6718:8372" ph="..." />
+                <marker date="1562388293461" expanded="true" signature="5233:6637" ph="..." />
+                <marker date="1562388293461" expanded="true" signature="6718:8254" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dataLimpia.csv">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -125,8 +144,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/datag.csv">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="32" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
+            <state relative-caret-position="1770">
+              <caret line="118" column="37" selection-start-line="118" selection-start-column="37" selection-end-line="118" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -140,11 +159,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/descriptiva.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1709">
-              <caret line="219" column="20" lean-forward="true" selection-start-line="219" selection-start-column="20" selection-end-line="219" selection-end-column="20" />
+              <caret line="219" column="20" selection-start-line="219" selection-start-column="20" selection-end-line="219" selection-end-column="20" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -176,8 +195,8 @@
         <option value="$PROJECT_DIR$/../descriptiva.py" />
         <option value="$PROJECT_DIR$/GenderData.csv" />
         <option value="$PROJECT_DIR$/GBNgender.py" />
-        <option value="$PROJECT_DIR$/clasificador.py" />
         <option value="$PROJECT_DIR$/descriptiva.py" />
+        <option value="$PROJECT_DIR$/clasificador.py" />
       </list>
     </option>
   </component>
@@ -187,7 +206,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="width" value="1440" />
     <option name="height" value="900" />
   </component>
@@ -231,7 +250,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.descriptiva">
+  <component name="RunManager" selected="Python.clasificador">
     <configuration name="GBNgender" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="test" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -280,9 +299,6 @@
       <module name="test" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -367,8 +383,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="1" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.11516452" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -385,11 +400,11 @@
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Terminal" order="11" />
-      <window_info anchor="bottom" id="Python Console" order="12" weight="0.43012047" />
+      <window_info active="true" anchor="bottom" id="Python Console" order="12" visible="true" weight="0.42945546" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="SciView" order="3" weight="0.8261803" />
+      <window_info anchor="right" id="SciView" order="3" visible="true" weight="0.8261803" />
       <window_info anchor="right" x="0" y="0" width="270" height="509" id="Documentation" order="4" side_tool="true" weight="0.32904148" />
       <window_info anchor="right" id="Database" order="5" />
     </layout>
@@ -430,18 +445,6 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/estadisticaDescriptiva.py" />
     <entry file="file://$PROJECT_DIR$/../descriptiva.py" />
-    <entry file="file://$PROJECT_DIR$/clasificador.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="30" column="40" selection-start-line="30" selection-start-column="40" selection-end-line="30" selection-end-column="40" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-            <marker date="1562020632097" expanded="true" signature="5233:6637" ph="..." />
-            <marker date="1562020632097" expanded="true" signature="6718:8372" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/GBNgender.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -456,19 +459,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/datag.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="32" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/descriptiva.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1709">
-          <caret line="219" column="20" lean-forward="true" selection-start-line="219" selection-start-column="20" selection-end-line="219" selection-end-column="20" />
+          <caret line="219" column="20" selection-start-line="219" selection-start-column="20" selection-end-line="219" selection-end-column="20" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datag.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1770">
+          <caret line="118" column="37" selection-start-line="118" selection-start-column="37" selection-end-line="118" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dataLimpia.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/clasificador.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="158" column="29" lean-forward="true" selection-start-line="158" selection-start-column="29" selection-end-line="158" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+            <marker date="1562388293461" expanded="true" signature="5233:6637" ph="..." />
+            <marker date="1562388293461" expanded="true" signature="6718:8254" ph="..." />
           </folding>
         </state>
       </provider>

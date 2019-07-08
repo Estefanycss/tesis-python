@@ -77,7 +77,7 @@ En la figura \ref{fig:dpd3} que gráfica PD3 cuyo valor máximo es 1290gr se obs
 
 En la figura \ref{fig:dpd4} se encuentran datos con valores extremos que se encuentran muy cercanos al mínimo y máximo.
 
-Las figuras descritas anteriormente permiten determinar que se debe realizar limpieza de datos para evitar esos valores extremos o atípicos que afectan negativamente los cálculos durante la clasificación.\\
+Las figuras descritas anteriormente permiten determinar que se debe realizar un proceso con los datos para observar si esos valores extremos afectan negativamente los cálculos durante la clasificación.\\
 
 
 \noindent
@@ -209,10 +209,10 @@ El desarrollo del clasificador se realizó empleando Bayes Naive Gaussiano como 
 	aproximadamente 567 filas.}
 	\item{clases\_set\_test: es un array de numpy y cada fila representa la clase (densidad) para los datos en el set de test
 	en el mismo número de fila, su cantidad de filas depende de la cantidad de datos que sean destinados a formar parte del set
-	de pruebas que en este caso es el 20\% de los datos iniciales, es decir, aproximadamente 567 filas.}
+	de pruebas que en este caso es el 20\% de los datos iniciales, es decir, aproximadamente 567 filas.\\}
 \end{itemize}
 
-Luego se ejecutan los siguientes pasos:
+Luego se ejecutan los siguientes pasos:\\
 \begin{enumerate}
 	\item Cálculo de la media y varianza:
 	como se indicó previamente los valores de las medias y varianzas de cada característica para cada clase son necesarios
@@ -266,7 +266,9 @@ y posteriormente se realiza la curva característica operativa del receptor con 
 \textbf{roc\_curve} y \textbf{auc} del mismo paquete, el primer método computa la curva ROC graficando las fracciones de
 verdaderos positivos y falsos positivos para distintos umbrales, y la función \textbf{auc} computa el área bajo la curva.
 Según Ato y López (1995) un área bajo la curva igual a 1 correspondería a una prueba diagnóstica perfecta y un
-área bajo la curva igual a 0.5 indica que se obtuvo una prueba sin precisión diagnóstica.
+área bajo la curva igual a 0.5 indica que se obtuvo una prueba sin precisión diagnóstica.\\
+
+Durante la descripción de los datos se observó que existen datos que podrían ser considerados extremos dentro del conjunto, para determinar si dichos datos tenían un efecto negativo durante la clasificación se realizó una prueba de sensibilidad eliminando los valores indicados anteriormente manualmente del conjunto de datos.
 
 \section{Evaluación}
 
@@ -275,21 +277,22 @@ Según Ato y López (1995) un área bajo la curva igual a 1 correspondería a un
 
 Cada vez que se ejecuta el algoritmo el mismo indica que obtuvo un porcentaje de aciertos de aproximadamente
 45\% y de desaciertos de aproximadamente 55\%, en cada corrida los datos que emplea el algoritmo para entrenamiento
-y prueba varían por lo tanto estos valores pueden cambiar ligeramente. En cuanto a la curva característica
-operativa del receptor se obtiene:
-
-
-\begin{figure}[h!]
-	\caption{Matriz de correlaciones para la densidad 3.}
-	\centering
-	\includegraphics[scale=0.55]{roc.png}
-	\label{fig:roc}
-\end{figure}
+y prueba varían por lo tanto estos valores pueden cambiar ligeramente.\\
 
 La curva ROC en la figura \ref{fig:roc} posee trazos que indican que no es una mala clasificación pero tampoco es una clasificación
 óptima, si se observan los valores para el área bajo la curva de la densidad 1, 2 y 3
 se obtuvieron 0.68, 0.56 y 0.61 respectivamente que según el estándar indicado anteriormente
 están entre una precisión regular y no tener precisión diagnóstica.\\
+\clearpage
+
+\begin{figure}[h!]
+	\caption{Curva característica operativa del receptor.}
+	\centering
+	\includegraphics[scale=0.6]{roc.png}
+	\label{fig:roc}
+\end{figure}
+
+En cuanto a la prueba de sensibilidad realizada se observó que la clasificación no se ve afectada drásticamente por la presencia de valores extremos, los resultados del algoritmo empleando el conjunto de datos sin dichos datos extremos obtuvó un porcentaje de aciertos de aproximadamente 45\% y de desaciertos de aproximadamente 55\%, y las áreas bajo la curva ROC para la densidad 1, 2 y 3 fueron 0.65, 0.59 y 0.59 respectivamente.\\
 
 Se puede demostrar que el algoritmo está generando una clasificación empleando el método de Bayes Naive Gaussiano
 y está obteniendo los resultados del método de evaluación, aunque los mismos no sean los deseados.\\
@@ -311,9 +314,7 @@ por calibre empleando Bayes Naive.\\
 
 En cuanto al proceso actual algunas mejoras posibles podrían ser la eliminación
 de las características con valores iguales a cero o emplear otros métodos para
-clasificar los datos como las redes neuronales, se podría implementar un análisis
-espacial e incluso realizar una revisión más profunda a los datos, cualquiera de
-estás alternativas podría mejorar o empeorar el porcentaje de aciertos de la clasificación actual.\\
+clasificar los datos como las redes neuronales, se podría implementar un análisis espacial e incluso realizar una revisión más profunda a los datos, cualquiera de estás alternativas podría mejorar o empeorar el porcentaje de aciertos de la clasificación actual.\\
 
 Según Rish (2001) existen características dentro de los datos que pueden afectar el
 rendimiento de Bayes Naive, como el impacto generado por la entropía de la distribución, la
