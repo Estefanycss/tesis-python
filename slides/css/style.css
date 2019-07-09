@@ -6,6 +6,26 @@
 .presentation p {
   font-size: 0.8em !important;
 }
-.presentation h4 {
-  margin: 3em 0;
+.presentation h3 {
+  margin: 2.5em 0;
+}
+
+.presentation .init {
+  font-size: 0.6em !important;
+}
+
+.antecedentes ul li {
+  margin: 25px 0 !important;
+}
+
+.images .plants {
+  width: 35%;
+}
+
+.images .surcos {
+  width: 55%;
+}
+
+.roc-curve {
+  width: 70%;
 }

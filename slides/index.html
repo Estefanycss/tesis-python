@@ -1,274 +1,337 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
 
-		<title>Bayes Naive Gaussiano</title>
+    <title>Bayes Naive Gaussiano</title>
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/bootstrap.min.css">
-		<link rel="stylesheet" href="css/theme/night.css">
-		<link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/reveal.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/theme/night.css" />
+    <link rel="stylesheet" href="css/style.css" />
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css" />
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides"  id="fragments">
-				<section class="presentation">
-					<img src="img/logo_unet.png" alt="" />
-					<p>
-						Universidad Nacional Experimental del Táchira -
-						Vicerrectorado Académico -
-						Decanato de Docencia -
-						Departamento de Ingeniería en Informática -
-						Trabajo de Aplicación Profesional -
-						Proyecto Especial de Grado
-					</p>
-					<h4>
-						Diseño de una clasificador de tubérculos de papa criolla para diferentes densidades de siembra según el peso fresco por calibre empleando Bayes Naive.
-					</h4>
-					<p class="text-right">
-						Autor: Estefany Salas. - estefany.salas@unet.edu.ve
-					</p>
-					<p class="text-right">
-						Tutor: Rossana Timaure - rttg@unet.edu.ve
-					</p>
-					<p>
-						Julio, 2019.
-					</p>
-				</section>
-				<section>
-					<section>
-						<h1>Preliminares</h1>
-					</section>
-					<section>
-						<h2>Planteamiento y formulación del problema</h2>
-						<ul>
-							<li>
-								<h4 class="fragment">Papa criolla (Solanum phureja).</h4>
-								<ol>
-									<li class="fragment">Intereses comerciales.</li>
-									<li class="fragment">Manipulación de variables, pero la densidad de siembra es espacial.</li>
-								</ol>
-							</li>
-							<li class="fragment"><h4>Redes neuronales artificiales y probabilísticas.</h4></li>
-							<li class="fragment"><h4>Lenguaje de programación estadístico R.</h4></li>
-						</ul>
-					</section>
-					<section>
-						<h2 class="text-left">Objetivo General</h2>
-						<p class="text-left">
-							Desarrollar un paquete en lenguaje R que permita la clasificación de tubérculos de papa
-							criolla (Solanum phureja) para diferentes densidades de siembra empleando redes neuronales
-							probabilı́sticas.
-						</p>
-					</section>
-					<section>
-						<h2 class="text-left">Objetivos Específicos</h2>
-						<ul>
-							<li class="fragment">
-								<p>
-									Estudiar la parametrización de la densidad de siembra como parámetro de entrada al
-									clasificador.
-								</p>
-							</li>
-							<li class="fragment">
-								<p>
-									Diseñar los algoritmos para las funciones principales que permitan el entrenamiento de una
-									red neuronal probabilı́stica para la clasificación de tubérculos de papa criolla (Solanum
-									phureja) para diferentes densidades de siembra.
-								</p>
-							</li>
-							<li class="fragment">
-								<p>
-									Implementar las funciones para la clasificación de tubérculos de papa criolla para diferentes
-									densidades de siembra, basadas en los algorı́tmos desarrollados.
-								</p>
-							</li>
-							<li class="fragment">
-								<p>
-									Realizar la pruebas del paquete desarrollado bajo diferente escenarios.
-								</p>
-							</li>
-						</ul>
-					</section>
-					<section>
-						<h2>Aportes de la investigación</h2>
-						<ul>
-							<li class="fragment">
-								<h4>
-									Sistema de producción poco eficiente.
-								</h4>
-							</li>
-							<li class="fragment">
-								<h4>
-									Los altos de precios de insumos agrícolas.
-								</h4>
-							</li>
-							<li class="fragment">
-								<h4>
-									Estudios lineales cuando la densidad de siembra es una variable de tipo espacial.
-								</h4>
-							</li>
-						</ul>
-					</section>
-				</section>
-				<section>
-					<section>
-						<h1>Fundamentos Teóricos</h1>
-					</section>
-					<section>
-						<h2>Antecedentes</h2>
-						<ul>
-							<li class="fragment">
-								<h4>
-									Cálculo de la tasa de germinación utilizando un clasificador basado en redes neuronales a partir de imágenes de plántulas previamente segmentadas.
-								</h4>
-							</li>
-							<li class="fragment">
-								<h4>Un algoritmo de reconocimiento de hojas para la clasificación de plantas utilizando una red neuronal probabilística.</h4>
-							</li>
-							<li class="fragment">
-								<h4>Modelado del Calibre de tubérculos de papa Solanum phureja bajo diferentes densidades de siembra mediante regresión binomial negativa cero-inflada.</h4>
-							</li>
-						</ul>
-					</section>
-					<section>
-						<h2>Bases Teóricas</h2>
-						<ul>
-							<li class="fragment">Papa criolla (Solanum Phureja)</li>
-							<li class="fragment">Redes neuronales artificiales.</li>
-							<li class="fragment">Redes neuronales probabilı́sticas.</li>
-							<li class="fragment">Curvas ROC.</li>
-							<li class="fragment">Lenguaje R.</li>
-							<li class="fragment">Estructura de paquetes en R/RStudio.</li>
-							<li class="fragment">RStudio.</li>
-						</ul>
-					</section>
-				</section>
-				<section>
-					<section>
-						<h1>Fundamentos Metodológicos</h1>
-					</section>
-					<section>
-						<h2>Enfoque de la investigación.</h2>
-						<h3>--- Proyectivo ---</h3>
-					</section>
-					<section>
-						<h2>Diseño de la investigación.</h2>
-						<h3>--- Secuencial algorítmico ---</h3>
-					</section>
-					<section>
-						<h2>Fases metodológicas.</h2>
-						<ul>
-							<li>
-								<h3 class="fragment">Desarrollo del paquete en R.</h3>
-								<ol>
-									<l1 class="fragment">Creación del esqueleto del paquete</l1>
-									<l1 class="fragment"> - Diseño de las soluciones algorı́tmicas</l1>
-									<l1 class="fragment"> - Codificación de los algoritmos</l1>
-									<l1 class="fragment"> - Registrar el método para el envı́o y uso de funciones</l1>
-									<l1 class="fragment"> - Diseñar y entrenar la red neuronal probabilı́stica</l1>
-									<l1 class="fragment"> - Pruebas unitarias de las funciones</l1>
-									<l1 class="fragment"> - Implementar y realizar pruebas de clasificación</l1>
-									<l1 class="fragment"> - Chequear la carga del paquete</l1>
-									<l1 class="fragment"> - Construcción del método de distribución del paquete</l1>
-								</ol>
-							</li>
-							<li class="fragment">
-								<h3>Comparación de resultados.</h3>
-							</li>
-						</ul>
-					</section>
-				</section>
-				<section>
-					<section>
-						<h1>Desarrollo</h1>
-					</section>
-					<section>
-						<h2>
-							Creación del esqueleto del paquete.
-						</h2>
-					</section>
-					<section>
-						<h2>
-							Diseño de las soluciones algorı́tmicas.
-						</h2>
-						<ul>
-							<li class="fragment">
-								Diseño de las soluciones algorı́tmicas para el entrenamiento de una red
-								neuronal probabilı́stica que permita la clasificación de tubérculos de papa.
-							</li>
-							<li class="fragment">
-								Diseño del algoritmo de la función de entrenamiento y clasificación de la red
-								(trainNeuralNet).
-							</li>
-							<li class="fragment">
-								Diseño del algoritmo de la función de evaluación de la red neuronal
-								probabilı́stica y su clasificación (evaluate).
-							</li>
-							<li class="fragment">
-								Diseño del algoritmo de la función de estandarización de datos (standardize).
-							</li>
-						</ul>
-					</section>
-					<section>
-						<h2>Codificación de los algoritmos.</h2>
-						<ul>
-							<li class="fragment">Función de entrenamiento y clasificación de la red (trainNeuralNet).</li>
-							<li class="fragment">Función de evaluación de la red (evaluate).</li>
-							<li class="fragment">Función de estandarización de datos (standardize).</li>
-						</ul>
-					</section>
-					<section>
-						<h2>Chequeo del paquete, método de distribución y registro del método de envı́o.</h2>
-					</section>
-					<section>
-						<h2>Pruebas funcionales del paquete.</h2>
-						<ul>
-							<li class="fragment">Algoritmo de clasificación.</li>
-							<li class="fragment">Gráfico de nubes de puntos.</li>
-							<li class="fragment">Curvas características operativas del receptor.</li>
-						</ul>
-					</section>
-				</section>
-				<section>
-					<h2>Conclusiones y Recomendaciones</h2>
-				</section>
-				<section>
-					<h1>Gracias.</h1>
-				</section>
-			</div>
-		</div>
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.type = "text/css";
+      link.href = window.location.search.match(/print-pdf/gi)
+        ? "css/print/pdf.css"
+        : "css/print/paper.css";
+      document.getElementsByTagName("head")[0].appendChild(link);
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides" id="fragments">
+        <section class="presentation">
+          <img src="img/logo_unet.png" alt="" />
+          <p class="init">
+            Universidad Nacional Experimental del Táchira - Vicerrectorado
+            Académico - Decanato de Docencia - Departamento de Ingeniería en
+            Informática - Trabajo de Aplicación Profesional - Proyecto Especial
+            de Grado
+          </p>
+          <h3>
+            Diseño de una clasificador de tubérculos de papa criolla para
+            diferentes densidades de siembra según el peso fresco por calibre
+            empleando Bayes Naive.
+          </h3>
+          <p class="text-right init">
+            Autor: Estefany Salas - estefany.salas@unet.edu.ve
+          </p>
+          <p class="text-right init">
+            Tutor: Rossana Timaure - rttg@unet.edu.ve
+          </p>
+          <p class="init">
+            Julio, 2019.
+          </p>
+        </section>
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
+        <section class="antecedentes">
+          <h2 class="bold">Capítulo 1: Preliminares</h2>
+          <ul>
+            <li>
+              Planteamiento y formulación del problema
+            </li>
+            <li>
+              Objetivos
+            </li>
+            <li>
+              Aportes de la investigación
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h4 class="text-left">Objetivo General</h4>
+          <p class="text-left">
+            Diseñar un clasificador de tubérculos de papa criolla para
+            diferentes densidades de siembra según el peso fresco por calibre
+            empleando Bayes Naive.
+          </p>
+        </section>
+        <section class="antecedentes">
+          <h4 class="text-left">Objetivos Específicos</h4>
+          <ul>
+            <li>
+              <p>
+                Diagnosticar el formato de las variables de entrada y salida
+                para el clasificador.
+              </p>
+            </li>
+            <li>
+              <p>
+                Establecer el tipo de algoritmo Bayes Naive a emplear y las
+                características para el entrenamiento.
+              </p>
+            </li>
+            <li>
+              <p>
+                Implementar el algoritmo de clasificacio ́n basado en Bayes
+                Naive.
+              </p>
+            </li>
+            <li>
+              <p>
+                Realizar las pruebas de funcionamiento y la comparación
+                estadística.
+              </p>
+            </li>
+          </ul>
+        </section>
+        <section class="antecedentes">
+          <h4 class="text-left">Aportes de la investigación</h4>
+          <ul>
+            <li>
+              <p>
+                Control de las características de la papa criolla
+                <i>Solanum phureja</i>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Herramienta para clasificación y evaluación de la misma.
+              </p>
+            </li>
+          </ul>
+        </section>
+        <section class="antecedentes">
+          <h2 class="bold">Capítulo 2: Fundamentos Teóricos</h2>
+          <ul>
+            <li>
+              Antecendentes
+            </li>
+            <li>
+              Bases Teóricas
+            </li>
+          </ul>
+        </section>
+        <section class="antecedentes">
+          <h4 class="text-left">Antecedentes</h4>
+          <ul>
+            <li>
+              Bacteria Identification from Microscopic Morphology using Naïve
+              Bayes. Mohamad, N., Jusoh, N., Htike, Z., Lei Win, S. (2014).
+            </li>
+            <li>
+              Classification of Selected Apple Fruit Varieties using Naïve
+              Bayes. Misigo, R., Miriti, E. (2016).
+            </li>
+            <li>
+              Evaluación del Rendimiento en Papa Criolla (<i>Solanum phureja</i
+              >) variedad Yema de Huevo, bajo diferentes Densidades de Siembra
+              en la Sabana de Bogotá. Arias, V., Bustos, P., N ̃ust ́ez, C.
+              (1996).
+            </li>
+            <li>
+              Comparison of a logistic regression and Naïve Bayes classifier in
+              landslide susceptibility assessments: The influence of models
+              complexity and training dataset size. Tsangaratos, P., Ilia, I.
+              (2016).
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h4>Bases Teóricas</h4>
+          <ul>
+            <li>Python</li>
+            <li>PyCharm</li>
+            <li>Regresión Espacial</li>
+            <li>Probabilidad Condicional</li>
+            <li>Teorema de Bayes</li>
+            <li>Inferencia Bayesiana</li>
+            <li>Clasificador Bayes Naive</li>
+            <li>Bayes Naive Bernoulli</li>
+            <li>Bayes Naive Multinomial</li>
+            <li>Bayes Naive Gaussiano</li>
+            <li>Curva Característica Operativa del Receptor</li>
+            <li>Papa criolla <i>(Solanum Phureja)</i></li>
+            <li>Glosario</li>
+          </ul>
+        </section>
+        <section class="images">
+          <p>Morfología de la papa criolla <i>(Solanum Phureja)</i></p>
+          <img class="plants" src="img/planta.jpeg" alt="" />
+        </section>
+        <section class="images">
+          <p>Disposición de las plantas en una siembra</p>
+          <img class="surcos" src="img/surcos.jpeg" alt="" />
+        </section>
 
-		<script>
-			// More info https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				history: true,
+        <section class="antecedentes">
+          <h2 class="bold">Capítulo 3: Fundamentos Metodológicos</h2>
+          <ul>
+            <li>Enfoque de la investigación: cuantitativo</li>
+            <li>Tipo o nivel de investigación: de campo y correlacional</li>
+            <li>
+              Diseño de la investigación: no experimental cuantitativa y
+              transeccional correlacional-causal
+            </li>
+            <li>Metodología</li>
+          </ul>
+        </section>
+        <section class="antecedentes">
+          <h4 class="text-left">
+            Metodología: CRISP-DM (Cross Industry Standard Process for Data
+            Mining)
+          </h4>
+          <ol>
+            <li>Comprensión del problema</li>
+            <li>Comprensión de datos</li>
+            <li>Preparación de datos</li>
+            <li>Modelado</li>
+            <li>Evaluación</li>
+          </ol>
+        </section>
 
-				// More info https://github.com/hakimel/reveal.js#dependencies
-				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-				]
-			});
-		</script>
-	</body>
+        <section>
+          <h2 class="bold">Capítulo 4: Desarrollo</h2>
+        </section>
+
+        <section class="antecedentes">
+          <h4 class="text-left">1. Comprensión del problema</h4>
+          <p class="text-left">1.1. Determinar los objetivos del problema</p>
+          <p class="text-left">1.2. Evaluación de la situación</p>
+          <p class="text-left">
+            1.3. Determinación de los objetivos del proyecto propuesto
+          </p>
+          <p class="text-left">1.4. Producción de un plan del proyecto</p>
+        </section>
+
+        <section class="antecedentes">
+          <h4 class="text-left">2. Comprensión de datos</h4>
+          <p class="text-left">2.1. Recolección de datos iniciales</p>
+          <p class="text-left">2.2. Descripción de los datos</p>
+          <p class="text-left">2.3. Exploración de datos</p>
+          <p class="text-left">2.4. Verificación de la calidad de los datos</p>
+        </section>
+
+        <section>
+          <h4 class="text-left">2.2. Descripción de los datos</h4>
+          <img src="img/descripcion.png" alt="" />
+        </section>
+
+        <section class="antecedentes">
+          <h4 class="text-left">2. Comprensión de datos</h4>
+          <p class="text-left">2.1. Recolección de datos iniciales</p>
+          <p class="text-left">2.2. Descripción de los datos</p>
+          <p class="text-left">2.3. Exploración de datos</p>
+          <p class="text-left">2.4. Verificación de la calidad de los datos</p>
+        </section>
+
+        <section class="antecedentes">
+          <h4 class="text-left">3. Preparación de datos</h4>
+          <p class="text-left">3.1. Selección de datos</p>
+          <p class="text-left">3.2. Limpieza de los datos</p>
+          <p class="text-left">3.3. Estructuración de los datos</p>
+          <p class="text-left">3.4. Integración de los datos</p>
+          <p class="text-left">3.5. Formato de los datos</p>
+        </section>
+
+        <section>
+          <h4 class="text-left" class="antecedentes">4. Modelado</h4>
+          <p class="text-left">4.1. Cálculo de media y varianza</p>
+          <img src="img/media.png" alt="" />
+        </section>
+
+        <section>
+          <h4 class="text-left" class="antecedentes">4. Modelado</h4>
+          <p class="text-left">4.2. Cálculo de probabilidades previas</p>
+          <img src="img/previa.png" alt="" />
+        </section>
+
+        <section>
+          <h4 class="text-left" class="antecedentes">4. Modelado</h4>
+          <p class="text-left">4.3. Cálculo de probabilidades posterior</p>
+          <img src="img/posterior.png" alt="" />
+        </section>
+
+        <section>
+          <h4 class="text-left" class="antecedentes">4. Modelado</h4>
+          <p class="text-left">
+            4.4. Obtiene las probabilidades condicionales y las predicciones
+          </p>
+          <img src="img/condicional.png" alt="" />
+        </section>
+
+        <section class="antecedentes">
+          <h4 class="text-left">5. Evaluación</h4>
+          <p class="text-left">5.1. Evaluación de los resultados</p>
+          <p class="text-left">5.2. Proceso de revisión</p>
+          <p class="text-left">5.3. Determinación de futuras fases</p>
+        </section>
+
+        <section>
+          <h4 class="text-left" class="antecedentes">5. Evaluación</h4>
+          <p class="text-left">5.1. Evaluación de los resultados</p>
+          <img class="roc-curve" src="img/roc.png" alt="" />
+        </section>
+
+        <section class="antecedentes">
+          <h4 class="text-left">5. Evaluación</h4>
+          <p class="text-left">5.1. Evaluación de los resultados</p>
+          <p class="text-left">5.2. Proceso de revisión</p>
+          <p class="text-left">5.3. Determinación de futuras fases</p>
+        </section>
+
+        <section>
+          <h2 class="bold">Capítulo 5: Conclusiones y Recomendaciones</h2>
+        </section>
+        <section>
+          <h1>Gracias.</h1>
+        </section>
+      </div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+      // More info https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        history: true,
+
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        dependencies: [
+          { src: "plugin/markdown/marked.js" },
+          { src: "plugin/markdown/markdown.js" },
+          { src: "plugin/notes/notes.js", async: true },
+          {
+            src: "plugin/highlight/highlight.js",
+            async: true,
+            callback: function() {
+              hljs.initHighlightingOnLoad();
+            }
+          }
+        ]
+      });
+    </script>
+  </body>
 </html>
