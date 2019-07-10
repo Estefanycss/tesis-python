@@ -1,6 +1,6 @@
 \chapter{Desarrollo}
 
-En este capítulo se describe de manera detallada el desarrollo del clasificador de tubérculos siguiendo la metodología descrita en el capítulo 3.
+En este capítulo se describe de manera detallada el desarrollo del clasificador de tubérculos siguiendo la metodología descrita en el Capítulo 3.
 \noindent
 \section{Comprensión de datos}
 
@@ -16,7 +16,7 @@ A los 120 días de siembra se cosecharon los tubérculos y se contaron según su
 \noindent
 \textbf{Descripción de los datos.}\\
 
-Los datos se encuentran separados según sus características en atributos, el primero denominado planta que contiene el número que identifica cada planta, el segundo llamada densidad que posee valores de 1, 2 o 3, donde 1 implica una densidad de siembra de 30cm, 2 una densidad de 40cm y 3 una densidad de 50cm. Los siguientes cuatro atributos están identificadas como PD1, PD2, PD3 y PD4, cada uno posee valores continuos que representan el peso fresco de cada calibre en esa planta, los calibres son 4 y representan la categorización de los tubérculos según su diámetro, para el calibre 1 se toman tubérculos con diámetro menor o igual a 2cm, para el calibre 2 con diámetro mayor a 2cm y menor o igual a 4cm, en el calibre 3 mayores a 4cm y menores o igual a 6cm y finalmente el calibre 4 con tubérculos de diámetro mayor a 6cm. Los últimos dos atributos son X y Y, que indican mediante un valor entero la posición de dicha planta en la siembra. La cantidad total de plantas es 2839, para las densidades de siembra 1, 2 y 3 hay 1135, 926 y 778 plantas respectivamente, cada una con valores de PD1, PD2, PD3, PD4, X y Y.
+Los datos se encuentran separados según sus características en atributos, el primero denominado planta que contiene el número que identifica cada planta, el segundo llamada densidad que posee valores de 1, 2 o 3, donde 1 implica una densidad de siembra de 30 cm, 2 una densidad de 40 cm y 3 una densidad de 50 cm. Los siguientes cuatro atributos están identificadas como PD1, PD2, PD3 y PD4, cada uno posee valores continuos que representan el peso fresco de cada calibre en esa planta, los calibres son 4 y representan la categorización de los tubérculos según su diámetro, para el calibre 1 se toman tubérculos con diámetro menor o igual a 2 cm, para el calibre 2 con diámetro mayor a 2 cm y menor o igual a 4 cm, en el calibre 3 mayores a 4 cm y menores o igual a 6 cm y finalmente el calibre 4 con tubérculos de diámetro mayor a 6 cm. Los últimos dos atributos son X y Y, que indican mediante un valor entero la posición de dicha planta en la siembra. La cantidad total de plantas es de 2839, para las densidades de siembra 1, 2 y 3 hay 1135, 926 y 778 plantas respectivamente, cada una con valores de PD1, PD2, PD3, PD4, X y Y.
 
 A continuación se observan los datos descriptivos de cada variable
 
@@ -27,19 +27,19 @@ A continuación se observan los datos descriptivos de cada variable
 & Densidad & PD1 & PD2 & PD3 & PD4  \\
 \hline \hline
 Conteo & 2839 & 2839 & 2839 & 2839 & 2839  \\ \hline
-Media & 1.8742 & 74.1536gr & 226.3262gr & 213.3114gr & 18.9698gr  \\ \hline
+Media & 1.8742 & 74.1536 gr & 226.3262 gr & 213.3114 gr & 18.9698 gr  \\ \hline
 Mínimo & 1 & 0gr & 0gr & 0gr & 0gr  \\ \hline
-Máximo & 3 & 390.0000gr & 1080.0000gr & 1290.0000gr & 775.9459gr  \\ \hline
-Mediana & 2 & 62.0547gr &195.0000gr & 164.7058 & 0.0000gr \\ \hline
+Máximo & 3 & 390.0000 gr & 1080.0000 gr & 1290.0000 gr & 775.9459 gr  \\ \hline
+Mediana & 2 & 62.0547 gr &195.0000 gr & 164.7058 & 0.0000 gr \\ \hline
 Varianza & 0.6582 & 2892.7971 & 26386.3844 & 36986.5868 & 3486.4316 \\ \hline
-Moda & 1 & 0gr & 0gr & 0gr & 0gr  \\ \hline
+Moda & 1 & 0 gr & 0 gr &  0 gr & 0 gr  \\ \hline
 Distribución & N/A & normal & normal & normal & normal  \\ \hline
 \end{tabular}
 \caption{Datos Estadísticos Descriptivos.}
 \label{tabla:descriptivos}
 \end{center}
 \end{table}
-En el cuadro \ref{tabla:descriptivos} se observan los datos estadísticos descriptivos de la densidad, PD1, PD2, PD3 y PD4; en cuanto a la densidad se puede establecer que la clase con mayor número de repeticiones es la 1 que representa una densidad de siembra de 30cm, las varianzas de las variables PD1, PD2, PD3 y PD4 son altas, esto indica que la data es heterogénea y se evidencia la existencia de datos extremos, en las siguientes gráficas de dispersión es pueden notar mejor estas observaciones.\\
+En el cuadro \ref{tabla:descriptivos} se observan los datos estadísticos descriptivos de la densidad, PD1, PD2, PD3 y PD4; en cuanto a la densidad se puede establecer que la clase con mayor número de repeticiones es la 1 que representa una densidad de siembra de 30 cm, las varianzas de las variables PD1, PD2, PD3 y PD4 son altas, esto indica que el conjunto de datos es heterogéneo y se evidencia la existencia de datos extremos, es decir valores que pudieran considerarse atípicos pero se encuentran dentro del rango de medición;  en las siguientes gráficas (\ref{fig:dpd1} a la \ref{fig:dpd4}) de dispersión se pueden visualizar estas observaciones.\\
 
 \begin{figure}[h!]
 	\caption{Dispersión de la variable de pesos fresco del calibre 1 respecto a la densidad.}
@@ -141,7 +141,7 @@ histogramas de las variables de entrada para cada densidad que permiten apreciar
 
 En la figura \ref{fig:pd1} se encuentra el histograma de la variable PD1 para cada densidad, se puede ver el comportamiento de la variable demostrando diferentes patrones para cada densidad; en cuanto a la figura \ref{fig:pd2} se tiene a la variable PD2 que muestra patrones un poco mas similares para cada densidad, en la siguiente figura que es la \ref{fig:pd3} se evidencia la disminución de esta variable para la densidad 1 y finalmente en la figura \ref{fig:pd4} se hace evidente que la variable PD4 tiene valores menores respecto a las anteriores.\\
 
-Los histogramas permiten determinar que la distribución de los datos de entrada se asemeja a una curva normal, lo que ayuda a inferir que se debe emplear el método gaussiano de Bayes Naive para realizar su clasificación.\\\\
+Los histogramas permiten determinar que la distribución de los datos de entrada presentan  una asimétria positiva, por lo que se decide  emplear el método gaussiano de \textit{Bayes Naive} para realizar su clasificación.\\\\
 
 \noindent
 \textbf{Verificación de la calidad de los datos.}\\
@@ -155,10 +155,9 @@ Luego de revisar los valores de los datos se determinó que no era necesaria la 
 
 Los datos disponibles son: densidad, PD1, PD2, PD3, PD4, X y Y, sin embargo, las coordenadas de las
 plantas no son un dato relevante para la clasificación que se realizó porque la misma busca determinar
-la densidad sólo a partir de los pesos frescos por calibre, por lo tanto se excluyeron del set de datos.\\
+la densidad sólo a partir de los pesos frescos por calibre, por lo tanto se excluyeron de lo conjuntos  de datos, empleados en el desarrollo.\\
 
-Se debe tomar en cuenta que los datos de los pesos frescos por calibre fueron calculados empíricamente
-lo que podría implicar tener valores erróneos.\\
+Se debe tomar en cuenta que los datos de los pesos frescos por calibre fueron calculados empíricamente, lo que podría implicar tener valores erróneos.\\
 
 \noindent
 \textbf{Limpieza de los datos.}\\
@@ -192,13 +191,13 @@ Los datos de entrada se encuentran ordenados según su clase, por lo tanto deben
 \noindent
 \textbf{Técnica de modelado.}\\
 
-Para la clasificación de los datos se empleó un modelo probabilístico basado en el teorema de Bayes Naive para una distribución
+Para la clasificación de los datos se empleó un modelo probabilístico basado en el teorema de \textit{Bayes Naive}  para una distribución
 gaussiana, se seleccionó esta técnica por tener como supuesto la independencia entre las variables y su distribución
 espacial. Las pruebas del modelo se realizaron separando los datos en un set de entrenamiento que posee el 80\% de los
 datos y el otro 20\% se destino al set de pruebas, luego de obtener los resultados para el set de pruebas se realiza la
 evaluación del modelo empleando la curva característica operativa del receptor.\\
 
-El desarrollo del clasificador se realizó empleando Bayes Naive Gaussiano como se indica anteriormente, luego de leer los datos se llama a la función
+El desarrollo del clasificador se realizó empleando \textit{Bayes Naive} Gaussiano como se indica anteriormente, luego de leer los datos se llama a la función
 \textbf{bayes\_naive\_gaussiano} que recibe como entrada los siguientes parámetros:
 \begin{itemize}
 	\item{set\_entrenamiento: es un array de numpy con las columnas número de planta, densidad, PD1, PD2, PD3, PD4, X y Y, su
@@ -275,12 +274,11 @@ Durante la descripción de los datos se observó que existen datos que podrían 
 \noindent
 \textbf{Evaluación de los resultados.}\\
 
-Cada vez que se ejecuta el algoritmo el mismo indica que obtuvo un porcentaje de aciertos de aproximadamente
-45\% y de desaciertos de aproximadamente 55\%, en cada corrida los datos que emplea el algoritmo para entrenamiento
-y prueba varían por lo tanto estos valores pueden cambiar ligeramente.\\
+El ajuste del algoritmo se evaluó empleando validación cruzada, es decir de forma aleatoria se conformaron varios grupos de entrenamiento y de prueba, con diferentes porcentajes en las primeras etapas de desarrollo, para con los mejores ajuste quedar distribuida con un 80 \% para el entrenamiento y luego grupos aleatorios de 20 \% para pruebas.
 
-La curva ROC en la figura \ref{fig:roc} posee trazos que indican que no es una mala clasificación pero tampoco es una clasificación
-óptima, si se observan los valores para el área bajo la curva de la densidad 1, 2 y 3
+Con los conjuntos conformados, de la forma detallada con anterioridad, se ejecutó el algoritmo obteniendo  un porcentaje de aciertos promedio de  45\% y de desaciertos de 55\%, con ligeras variaciones entre corridas.\\
+
+La curva ROC que se visualiza en la figura \ref{fig:roc} posee trazos que indican que no es una mala clasificación pero tampoco es una clasificación óptima, si se observan los valores para el área bajo la curva de la densidad 1, 2 y 3
 se obtuvieron 0.68, 0.56 y 0.61 respectivamente que según el estándar indicado anteriormente
 están entre una precisión regular y no tener precisión diagnóstica.\\
 \clearpage
@@ -292,32 +290,31 @@ están entre una precisión regular y no tener precisión diagnóstica.\\
 	\label{fig:roc}
 \end{figure}
 
-En cuanto a la prueba de sensibilidad realizada se observó que la clasificación no se ve afectada drásticamente por la presencia de valores extremos, los resultados del algoritmo empleando el conjunto de datos sin dichos datos extremos obtuvó un porcentaje de aciertos de aproximadamente 45\% y de desaciertos de aproximadamente 55\%, y las áreas bajo la curva ROC para la densidad 1, 2 y 3 fueron 0.65, 0.59 y 0.59 respectivamente.\\
+Una vez ajustdo el clasificaro se realizaron pruebas de sensibilidad a los datos extremos observando que la clasificación no se ve afectada significativamente, los resultados del algoritmo empleando el conjunto de datos sin dichos datos extremos obtuvó un porcentaje de aciertos de aproximadamente 45\% y de desaciertos de aproximadamente 55\%, y las áreas bajo la curva ROC para la densidad 1, 2 y 3 fueron 0.65, 0.59 y 0.59 respectivamente.\\
 
-Se puede demostrar que el algoritmo está generando una clasificación empleando el método de Bayes Naive Gaussiano
-y está obteniendo los resultados del método de evaluación, aunque los mismos no sean los deseados.\\
+Esto permite evidenciar que  el algoritmo está generando una clasificación empleando el método de
+ \textit{Bayes Naive} Gaussiano, aunque sin embargo los resultados no indican obtener una buena clasificación, algunas de las razones pueden ser:.\\
 
 \noindent
 \textbf{Proceso de revisión.}\\
 
 Los objetivos de este proceso fueron diagnósticar el formato de las
 variables de entrada y salida para el clasificador, establecer el tipo de
-algoritmo de Bayes Naive a emplear y las características para el entrenamiento,
+algoritmo de \textit{Bayes Naive} a emplear y las características para el entrenamiento,
 realizar la implementación del algoritmo, realizar las pruebas de funcionamiento
-y la comparación estadística, todos estos objetivos fueron cubiertos durante el
+y la comparación estadística entre las pruebas enpleando cuvas ROC, todos estos objetivos fueron cubiertos durante el
 desarrollo de esta metodología y se logró el diseño de un clasificador de tubérculos
 de papa criolla para diferentes densidades de siembra a partir de los pesos frescos
-por calibre empleando Bayes Naive.\\
+por calibre empleando \textit{Bayes Naive} gaussiano; sin embargo los resultados no permiten docimar la hipótesisl que da origen al trabajo de investigación,  de que en base a los pesos frescos por calibre de papa criolla, se pueda determinar su densidad de siembra.\\
 
 \noindent
 \textbf{Determinación de futuras fases.}\\
 
 En cuanto al proceso actual algunas mejoras posibles podrían ser la eliminación
-de las características con valores iguales a cero o emplear otros métodos para
-clasificar los datos como las redes neuronales, se podría implementar un análisis espacial e incluso realizar una revisión más profunda a los datos, cualquiera de estás alternativas podría mejorar o empeorar el porcentaje de aciertos de la clasificación actual.\\
+de las características con valores iguales a cero o emplear otros tipos de clasificación \textit{Bayes Naive} o se podría implementar un análisis mixto realizando estimaciones  espaciales e incluso realizar una revisión más profunda a los datos, cualquiera de estás alternativas podría mejorar o empeorar el porcentaje de aciertos de la clasificación actual.\\
 
 Según Rish (2001) existen características dentro de los datos que pueden afectar el
-rendimiento de Bayes Naive, como el impacto generado por la entropía de la distribución, la
+rendimiento de \textit{Bayes Naive}, como el impacto generado por la entropía de la distribución, la
 cantidad de información despreciada por asumir la independencia de las entradas, entre otros,
-sería bueno identificar estas características dentro del set de datos empleados para la prueba de
-este clasificador y así lograr determinar que está afectando la clasificación.
+sería bueno identificar estas características dentro del conjunto de datos empleados y de los parámetros estimados para la prueba de
+este clasificador y así lograr valorar que está afectando la clasificación.
