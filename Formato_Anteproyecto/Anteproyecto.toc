@@ -4,7 +4,7 @@
 \contentsline {section}{\numberline {1.2}Objetivos}{6}{section.1.2}
 \contentsline {subsection}{\numberline {1.2.1}Objetivo general}{6}{subsection.1.2.1}
 \contentsline {subsection}{\numberline {1.2.2}Objetivos espec\'ificos}{6}{subsection.1.2.2}
-\contentsline {section}{\numberline {1.3}Aportes de la investigaci\IeC {\'o}n}{7}{section.1.3}
+\contentsline {section}{\numberline {1.3}Aportes de la investigaci\IeC {\'o}n}{6}{section.1.3}
 \contentsline {chapter}{\numberline {2}Fundamentos te\'oricos}{8}{chapter.2}
 \contentsline {section}{\numberline {2.1}Antecedentes}{8}{section.2.1}
 \contentsline {section}{\numberline {2.2}Bases Te\'oricas}{10}{section.2.2}
@@ -19,7 +19,7 @@
 \contentsline {subsection}{\numberline {2.2.9}Bayes Naive Multinomial}{14}{subsection.2.2.9}
 \contentsline {subsection}{\numberline {2.2.10}Bayes Naive Gaussiano}{14}{subsection.2.2.10}
 \contentsline {subsection}{\numberline {2.2.11}Curva caracter\IeC {\'\i }stica operativa del receptor}{15}{subsection.2.2.11}
-\contentsline {subsection}{\numberline {2.2.12}papa criolla (\textit {Solanum phureja})}{15}{subsection.2.2.12}
+\contentsline {subsection}{\numberline {2.2.12}Papa criolla (\textit {Solanum phureja})}{15}{subsection.2.2.12}
 \contentsline {subsection}{\numberline {2.2.13}Glosario}{17}{subsection.2.2.13}
 \contentsline {paragraph}{Densidad de siembra}{17}{section*.6}
 \contentsline {paragraph}{Hilera}{17}{section*.7}
@@ -33,6 +33,6 @@
 \contentsline {chapter}{\numberline {4}Desarrollo}{22}{chapter.4}
 \contentsline {section}{\numberline {4.1}Comprensi\IeC {\'o}n de datos}{22}{section.4.1}
 \contentsline {section}{\numberline {4.2}Preparaci\IeC {\'o}n de datos}{31}{section.4.2}
-\contentsline {section}{\numberline {4.3}Modelado}{32}{section.4.3}
+\contentsline {section}{\numberline {4.3}Modelado}{33}{section.4.3}
 \contentsline {section}{\numberline {4.4}Evaluaci\IeC {\'o}n}{35}{section.4.4}
 \contentsline {chapter}{\numberline {5}Conclusiones y recomendaciones}{38}{chapter.5}
