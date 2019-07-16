@@ -29,3 +29,37 @@
 .roc-curve {
   width: 70%;
 }
+
+.planteamiento {
+  width: 25%;
+  box-shadow: 10px 10px 10px -1px rgba(221, 221, 221, 1);
+  margin: 10px !important;
+}
+
+.planteamiento2 {
+  width: 62%;
+  box-shadow: 10px 10px 10px -1px rgba(221, 221, 221, 1);
+  margin: 10px !important;
+}
+
+.images-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.dispersion .row img {
+  width: 65%;
+}
+
+.exploracion .row img {
+  width: 35%;
+}

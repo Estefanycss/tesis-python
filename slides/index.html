@@ -34,10 +34,9 @@
         <section class="presentation">
           <img src="img/logo_unet.png" alt="" />
           <p class="init">
-            Universidad Nacional Experimental del Táchira - Vicerrectorado
-            Académico - Decanato de Docencia - Departamento de Ingeniería en
-            Informática - Trabajo de Aplicación Profesional - Proyecto Especial
-            de Grado
+            Universidad Nacional Experimental del Táchira<br />
+            Vicerrectorado Académico<br />
+            Departamento de Aplicación Profesional
           </p>
           <h3>
             Diseño de una clasificador de tubérculos de papa criolla para
@@ -48,7 +47,7 @@
             Autor: Estefany Salas - estefany.salas@unet.edu.ve
           </p>
           <p class="text-right init">
-            Tutor: Rossana Timaure - rttg@unet.edu.ve
+            Tutor: Dra. Rossana Timaure - rttg@unet.edu.ve
           </p>
           <p class="init">
             Julio, 2019.
@@ -68,6 +67,13 @@
               Aportes de la investigación
             </li>
           </ul>
+        </section>
+        <section>
+          <h4 class="text-left">Planteamiento y formulación del problema</h4>
+          <div class="images-box">
+            <img class="planteamiento" src="img/tamañospapa.jpg" alt="" />
+            <img class="planteamiento2" src="img/cultivo.jpg" alt="" />
+          </div>
         </section>
         <section>
           <h4 class="text-left">Objetivo General</h4>
@@ -111,8 +117,11 @@
           <ul>
             <li>
               <p>
-                Control de las características de la papa criolla
-                <i>Solanum phureja</i>.
+                Estudio exploratorio de algunas características de la papa
+                criolla
+                <i>Solanum phureja</i>
+                que pudieran usarse para la clasificación basándose en la
+                distribución espacial de la densidad de siembra.
               </p>
             </li>
             <li>
@@ -147,23 +156,13 @@
             <li>
               Evaluación del Rendimiento en Papa Criolla (<i>Solanum phureja</i
               >) variedad Yema de Huevo, bajo diferentes Densidades de Siembra
-              en la Sabana de Bogotá. Arias, V., Bustos, P., N ̃ust ́ez, C.
-              (1996).
-            </li>
-            <li>
-              Comparison of a logistic regression and Naïve Bayes classifier in
-              landslide susceptibility assessments: The influence of models
-              complexity and training dataset size. Tsangaratos, P., Ilia, I.
-              (2016).
+              en la Sabana de Bogotá. Arias, V., Bustos, P., Ñústez, C. (1996).
             </li>
           </ul>
         </section>
         <section>
           <h4>Bases Teóricas</h4>
           <ul>
-            <li>Python</li>
-            <li>PyCharm</li>
-            <li>Regresión Espacial</li>
             <li>Probabilidad Condicional</li>
             <li>Teorema de Bayes</li>
             <li>Inferencia Bayesiana</li>
@@ -184,6 +183,39 @@
           <p>Disposición de las plantas en una siembra</p>
           <img class="surcos" src="img/surcos.jpeg" alt="" />
         </section>
+        <section>
+          <h4 class="text-left">Inferencia Bayesiana</h4>
+          <p class="text-left">
+            El enfoque Bayesiano se caracteriza por tratar todas las fuentes de
+            incertidumbre usando probabilidades, es decir, ni el modelo para
+            explicar un conjunto de datos observado ni sus parámetros son fijos,
+            se tratan como variables inciertas.
+          </p>
+        </section>
+        <section>
+          <h4 class="text-left">Teorema de Bayes</h4>
+          <p class="text-left">
+            <i class="bold">P(Ci)</i> representa la probabilidad previa del
+            valor de una variable aleatoria <i class="bold">Ci</i> antes de
+            observar <i class="bold">X</i>, luego de observar
+            <i class="bold">X</i>
+            se obtiene la probabilidad posterior <i class="bold">P(X|Ci)</i> que
+            indica el grado de creencia actualizado sobre un sistema incierto
+            luego de haber hecho algunas observaciones al respecto.
+          </p>
+        </section>
+        <section>
+          <h4 class="text-left">Teorema de Bayes</h4>
+          <p class="text-left">
+            Luego se emplea la Ley de la Probabilidad Total con el conjunto de
+            probabilidades posteriores obteniendo así
+          </p>
+          <img src="img/condicional.png" alt="" />
+          <p class="text-left">
+            Donde <i class="bold">P(Ci|X)</i> es la probabilidad condicional de
+            <i class="bold">Ci</i> influenciada por <i class="bold">X</i>
+          </p>
+        </section>
 
         <section class="antecedentes">
           <h2 class="bold">Capítulo 3: Fundamentos Metodológicos</h2>
@@ -194,14 +226,18 @@
               Diseño de la investigación: no experimental cuantitativa y
               transeccional correlacional-causal
             </li>
-            <li>Metodología</li>
+            <li>Metodología CRISP-DM</li>
           </ul>
         </section>
         <section class="antecedentes">
           <h4 class="text-left">
-            Metodología: CRISP-DM (Cross Industry Standard Process for Data
+            Metodología CRISP-DM (Cross Industry Standard Process for Data
             Mining)
           </h4>
+          <p class="text-left">
+            Esta metodología fue empleada para el desarrollo del algoritmo, sus
+            fases son las siguientes:
+          </p>
           <ol>
             <li>Comprensión del problema</li>
             <li>Comprensión de datos</li>
@@ -235,15 +271,68 @@
 
         <section>
           <h4 class="text-left">2.2. Descripción de los datos</h4>
+          <p class="text-left">
+            Durante esta etapa se estudian los atributos, que son densidad, PD1,
+            PD2, PD3 y PD4, a cada uno de estos atributos se le realizó un
+            análisis estadístico descriptivo que se detalla a continuación
+          </p>
           <img src="img/descripcion.png" alt="" />
         </section>
 
-        <section class="antecedentes">
-          <h4 class="text-left">2. Comprensión de datos</h4>
-          <p class="text-left">2.1. Recolección de datos iniciales</p>
-          <p class="text-left">2.2. Descripción de los datos</p>
-          <p class="text-left">2.3. Exploración de datos</p>
-          <p class="text-left">2.4. Verificación de la calidad de los datos</p>
+        <section class="dispersion">
+          <h4 class="text-left">2.2. Descripción de los datos</h4>
+          <p class="text-left">
+            Gráficos de dispersión de las variables PD1 y PD2
+          </p>
+          <div class="row">
+            <img src="img/d-pd1.png" alt="" />
+            <img src="img/d-pd2.png" alt="" />
+          </div>
+        </section>
+
+        <section class="dispersion">
+          <h4 class="text-left">2.2. Descripción de los datos</h4>
+          <p class="text-left">
+            Gráficos de dispersión de las variables PD3 y PD4
+          </p>
+          <div class="row">
+            <img src="img/d-pd3.png" alt="" />
+            <img src="img/d-pd4.png" alt="" />
+          </div>
+        </section>
+
+        <section class="exploracion">
+          <h4 class="text-left">2.3. Exploración de datos</h4>
+          <p class="text-left">
+            Matriz de correlaciones para cada densidad
+          </p>
+          <div class="row">
+            <img src="img/correlacionD1.jpg" alt="" />
+            <img src="img/correlacionD2.jpg" alt="" />
+            <img src="img/correlacionD3.jpg" alt="" />
+          </div>
+        </section>
+
+        <section class="dispersion">
+          <h4 class="text-left">2.3. Exploración de datos</h4>
+          <p class="text-left">
+            Histogramas de las variables PD1 y PD2
+          </p>
+          <div class="row">
+            <img src="img/PD1.png" alt="" />
+            <img src="img/PD2.png" alt="" />
+          </div>
+        </section>
+
+        <section class="dispersion">
+          <h4 class="text-left">2.3. Exploración de datos</h4>
+          <p class="text-left">
+            Histogramas de las variables PD3 y PD4
+          </p>
+          <div class="row">
+            <img src="img/PD3.png" alt="" />
+            <img src="img/PD4.png" alt="" />
+          </div>
         </section>
 
         <section class="antecedentes">
@@ -258,7 +347,14 @@
         <section>
           <h4 class="text-left" class="antecedentes">4. Modelado</h4>
           <p class="text-left">4.1. Cálculo de media y varianza</p>
+
           <img src="img/media.png" alt="" />
+          <p class="text-left">
+            Donde
+            <i class="bold">X</i> representa el valor <i class="bold">i</i> del
+            conjunto de datos, e <i class="bold">i</i> va desde 1 hasta
+            <i class="bold">n</i> que representa la cantidad de datos total.
+          </p>
         </section>
 
         <section>
@@ -271,6 +367,11 @@
           <h4 class="text-left" class="antecedentes">4. Modelado</h4>
           <p class="text-left">4.3. Cálculo de probabilidades posterior</p>
           <img src="img/posterior.png" alt="" />
+          <p class="text-left">
+            Donde sigma al cuadrado representa la varianza de esa característica
+            en esa clase y la <i class="bold">X</i> con la barra horizontal la
+            media para esa característica en esa clase.
+          </p>
         </section>
 
         <section>
@@ -279,6 +380,16 @@
             4.4. Obtiene las probabilidades condicionales y las predicciones
           </p>
           <img src="img/condicional.png" alt="" />
+          <p class="text-left">
+            Donde se multiplica la probabilidad previa de la clase
+            <i class="bold">Ci</i> (la <i class="bold">i</i> itera sobre la
+            cantidad de clases) por la probabilidad posterior de que
+            <i class="bold">X</i> pertenezca a la clase <i class="bold">Ci</i>,
+            y luego se divide entre la sumatoria de la multiplicación de la
+            probabilidad previa de cada clase <i class="bold">C</i> por la
+            probabilidad posterior de que <i class="bold">X</i> pertenezca a
+            cada una de las clases.
+          </p>
         </section>
 
         <section class="antecedentes">
@@ -295,10 +406,8 @@
         </section>
 
         <section class="antecedentes">
-          <h4 class="text-left">5. Evaluación</h4>
-          <p class="text-left">5.1. Evaluación de los resultados</p>
-          <p class="text-left">5.2. Proceso de revisión</p>
-          <p class="text-left">5.3. Determinación de futuras fases</p>
+          <h4 class="text-left">5.2. Proceso de revisión</h4>
+          <h4 class="text-left">5.3. Determinación de futuras fases</h4>
         </section>
 
         <section>

@@ -49,7 +49,7 @@ def media_varianza(x, y, set_entrenamiento):
 
     for i in range(0, (len(cantidad_clases))):
         for j in range(0, cantidad_caracteristicas):
-            v[i, j] = v[i, j] / (cantidad_clases[i + 1]-1)
+            v[i, j] = v[i, j] / (cantidad_clases[i + 1] - 1)
 
     print('\n---------------------------------------------------------------------------------------------------\n'
           'Media de cada caracteristica (columna) para cada clase (fila - densidad)'
@@ -106,7 +106,6 @@ def prob_caracteristica_clase(m, v, set_test):
     return pcc
 
 
-
 # CALCULO DE LA PROBABILIDAD CONDICIONAL PARA CADA CLASE USANDO EL TEOREMA DE BAYES
 # Funcion para calcular la media y varianza de los datos, teniendo como parametros `x`
 # que es un array con los datos de las caracteristicas, `y` que contiene la clase a la
@@ -152,13 +151,12 @@ def prob_condicional(set_test, cant_clases, pcc, prob_previa, clases_set_test):
 def curvas_roc(clases_set_test, prediccion, cant_clases, prob_cond):
     print(clases_set_test, prediccion)
 
-    #matrix_confusion = confusion_matrix(clases_set_test, prediccion)
-    # print('\n---------------------------------------------------------------------------------------------------\n'
-    #       'Matriz de confusión'
-    #       '\n---------------------------------\n',
-    #       matrix_confusion)
-    # plt.style.use('ggplot')
-    # Compute ROC curve and ROC AUC for each class
+    matrix_confusion = confusion_matrix(clases_set_test, prediccion)
+    print('\n---------------------------------------------------------------------------------------------------\n'
+          'Matriz de confusión'
+          '\n---------------------------------\n',
+          matrix_confusion)
+    plt.style.use('ggplot')
 
     y_test = np.zeros((len(clases_set_test), cant_clases))
     for i in range(0, len(clases_set_test)):
@@ -208,7 +206,7 @@ def bayes_naive_gaussiano(set_entrenamiento, set_test, clases_set_test):
 
 # LECTURA DEL ARCHIVO Y CREACION DE SETS DE ENTRENAMIENTO Y TEST
 # Leyendo la data de un archivo .csv
-data = pd.read_csv('./dataLimpia.csv', delimiter=',')
+data = pd.read_csv('./datag.csv', delimiter=',')
 
 # pasando la data de pandas dataframe a numpy ndarray
 data = np.array(data.iloc[:])
@@ -229,4 +227,3 @@ clases_set_test = data[0:cantidad_muestras, 1]
 set_entrenamiento = data[cantidad_muestras: len(data), :]
 
 bayes_naive_gaussiano(set_entrenamiento, set_test, clases_set_test)
-
